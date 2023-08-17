@@ -126,6 +126,7 @@ class CreditController extends AdminController
                     'id' => $credit->id,
                     'seq' => $credit->seq,
                     'title' => $credit->title,
+                    'name' => $credit->name,
                     'created_at' => $credit->created_at->format('d/m/Y'),
                 ];
             });

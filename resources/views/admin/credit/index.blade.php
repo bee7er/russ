@@ -24,6 +24,7 @@
         <tr>
             <th>{!! trans("admin/credit.seq") !!}</th>
             <th>{!! trans("admin/credit.title") !!}</th>
+            <th>{!! trans("admin/credit.name") !!}</th>
             <th>{!! trans("admin/admin.created_at") !!}</th>
             <th>{!! trans("admin/admin.action") !!}</th>
         </tr>
