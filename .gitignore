@@ -1,0 +1,9 @@
+/.idea
+/.DS*
+/vendor
+/node_modules
+.env
+.env_live
+composer.lock
+bereadme.txt
+*.sql
