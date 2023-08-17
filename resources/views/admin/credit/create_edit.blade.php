@@ -40,12 +40,19 @@
             </div>
         </div>
         <div class="form-group  {{ $errors->has('name') ? 'has-error' : '' }}">
-            {!! Form::label('Name', trans("admin/credit.name"), array('class' => 'control-label')) !!}
+            {!! Form::label('name', trans("admin/credit.name"), array('class' => 'control-label')) !!}
             <div class="controls">
-                {!! Form::text('name', null, array('class' => 'form-control')) !!}
+                {!! Form::textarea('name', null, array('class' => 'form-control')) !!}
                 <span class="help-block">{{ $errors->first('name', ':message') }}</span>
             </div>
         </div>
+        {{--<div class="form-group  {{ $errors->has('name') ? 'has-error' : '' }}">--}}
+            {{--{!! Form::label('Name', trans("admin/credit.name"), array('class' => 'control-label')) !!}--}}
+            {{--<div class="controls">--}}
+                {{--{!! Form::text('name', null, array('class' => 'form-control')) !!}--}}
+                {{--<span class="help-block">{{ $errors->first('name', ':message') }}</span>--}}
+            {{--</div>--}}
+        {{--</div>--}}
 
         @if (isset($credit))
             <input type="hidden" name="id" value="{{$credit->id}}" id="id">
