@@ -62,7 +62,6 @@ class HomeController extends Controller
 				'resources.isDirector',
 				'resources.isPersonal',
 				'resources.isCommercial',
-				'resources.url',
 				'resources.type',
 				'resources.seq',
 				'resources.deleted_at'

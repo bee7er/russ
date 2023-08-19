@@ -18,7 +18,6 @@ class ResourceTableSeeder extends Seeder {
         $resource->name = 'Chips & Waffles';
         $resource->image = '';
         $resource->thumb = 'chipwaffle_still.png';
-        $resource->url = 'https://player.vimeo.com/video/145770435';
         $resource->type = 'video';
         $resource->template_id = $videoTemplate->id;
         $resource->description = 'How chips and waffles come from a potato.<br /> <a href="https://vimeo.com/145770435">Chips &amp; Waffles</a> from <a
@@ -31,7 +30,6 @@ href="https://vimeo.com/russether">Russell Etheridge</a> on <a href="https://vim
         $resource->name = 'Bathroom Boarder';
         $resource->image = '';
         $resource->thumb = 'bathroomboarder_th.png';
-        $resource->url = 'https://player.vimeo.com/video/137499366';
         $resource->type = 'video';
         $resource->template_id = $videoTemplate->id;
         $resource->description = 'A little arachnid themed short I managed to squeeze out during spare time.';
@@ -43,7 +41,6 @@ href="https://vimeo.com/russether">Russell Etheridge</a> on <a href="https://vim
         $resource->name = 'Propz - Binoculars';
         $resource->image = '';
         $resource->thumb = 'binoculars.jpg';
-        $resource->url = 'https://player.vimeo.com/video/122770363';
         $resource->type = 'video';
         $resource->template_id = $videoTemplate->id;
         $resource->description = 'My feline-vision-aid contribution to the Propz series.';
@@ -57,7 +54,6 @@ href="https://vimeo.com/russether">Russell Etheridge</a> on <a href="https://vim
         $resource->thumb = 'blizzard.jpg';
         $resource->type = 'gif';
         $resource->template_id = $gifTemplate->id;
-        $resource->url = 'blizzard_loop.gif';
         $resource->description = 'A little animation test.';
         $resource->content_a = 'Hello from content A';
         $resource->content_b = 'Hello from content B';
@@ -67,7 +63,6 @@ href="https://vimeo.com/russether">Russell Etheridge</a> on <a href="https://vim
         $resource->name = 'Weetabix - On the Go';
         $resource->image = '';
         $resource->thumb = 'catchaleavingtrain.jpg';
-        $resource->url = '';
         $resource->type = 'video';
         $resource->template_id = $videoTemplate->id;
         $resource->description = 'A series of quick morning cheats I designed and directed for Weetabix.';
@@ -79,7 +74,6 @@ href="https://vimeo.com/russether">Russell Etheridge</a> on <a href="https://vim
         $resource->name = 'Propz - Shoelaces';
         $resource->image = '';
         $resource->thumb = 'shoelaces.jpg';
-        $resource->url = 'https://player.vimeo.com/video/119444475';
         $resource->type = 'video';
         $resource->template_id = $videoTemplate->id;
         $resource->description = 'My valentines-shoe contribution to the Propz series.';
@@ -91,7 +85,6 @@ href="https://vimeo.com/russether">Russell Etheridge</a> on <a href="https://vim
         $resource->name = 'Showreel 2014';
         $resource->image = '';
         $resource->thumb = 'showreel2014.png';
-        $resource->url = 'https://player.vimeo.com/video/104406081';
         $resource->type = 'video';
         $resource->template_id = $videoTemplate->id;
         $resource->description = 'My feline-vision-aid contribution to the Propz series.';
@@ -103,7 +96,6 @@ href="https://vimeo.com/russether">Russell Etheridge</a> on <a href="https://vim
         $resource->name = 'The Lion';
         $resource->image = '';
         $resource->thumb = 'thelion.jpg';
-        $resource->url = 'https://player.vimeo.com/video/60453523';
         $resource->type = 'video';
         $resource->template_id = $videoTemplate->id;
         $resource->description = 'Award winning animated music video for US based band Escapist Papers.';
@@ -115,7 +107,6 @@ href="https://vimeo.com/russether">Russell Etheridge</a> on <a href="https://vim
         $resource->name = 'Robbie Williams – Take the Crown';
         $resource->image = '';
         $resource->thumb = 'robbiew.jpg';
-        $resource->url = 'http://player.vimeo.com/video/69224915';
         $resource->type = 'video';
         $resource->template_id = $videoTemplate->id;
         $resource->description = 'Promo for Robbie Williams’ ‘Take the Crown’ album release.';
@@ -127,7 +118,6 @@ href="https://vimeo.com/russether">Russell Etheridge</a> on <a href="https://vim
         $resource->name = 'Blackberry – Those Who Do';
         $resource->image = '9ca298e803a2960f11d20681ed96216d3d2c4c21.jpg';
         $resource->thumb = 'blackberry.jpg';
-        $resource->url = 'blackberry.jpg';
         $resource->type = 'image';
         $resource->template_id = $imageTemplate->id;
         $resource->description = 'Computer game style footballer…';
@@ -139,7 +129,6 @@ href="https://vimeo.com/russether">Russell Etheridge</a> on <a href="https://vim
         $resource->name = 'Merry Xmas!';
         $resource->image = '30936a68dc1ea567f08dea544a89c2cdd7927a13.jpg';
         $resource->thumb = 'xmas_still_life.jpg';
-        $resource->url = 'xmas_still_life.jpg';
         $resource->type = 'image';
         $resource->template_id = $imageTemplate->id;
         $resource->description = 'An animated Xmas card, created with Cinema 4D and After Effects.';

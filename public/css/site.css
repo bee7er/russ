@@ -20644,6 +20644,11 @@ body {
   height: 0;
 }
 
+p a {
+  color: #fff;
+  text-decoration: underline;
+}
+
 /* Media queries */
 
 @media (max-width: 1200px) {
