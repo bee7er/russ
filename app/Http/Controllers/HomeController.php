@@ -17,6 +17,7 @@ use Illuminate\Http\Request;
 class HomeController extends Controller
 {
 	const ABOUT_TEMPLATE = '*About';
+	const LOGOS_TEMPLATE = '*Logos';
 
 	/**
 	 * The Guard implementation.
@@ -162,14 +163,17 @@ class HomeController extends Controller
 			->limit(999)->get();
 
 		$about = Template::where([ 'name' => self::ABOUT_TEMPLATE, 'deleted_at' => null ])->get()->first();
-		$aboutText = $about->container;
+		$aboutText = $about ? $about->container: null;
+
+		$logos = Template::where([ 'name' => self::LOGOS_TEMPLATE, 'deleted_at' => null ])->get()->first();
+		$logosText = $logos ? $logos->container: null;
 
 		$loggedIn = false;
 		if ($this->auth->check()) {
 			$loggedIn = true;
 		}
 
-		return view('pages.home', compact('resources', 'titleResource', 'isShowAllResources', 'aboutText', 'notices', 'tutorials', 'loggedIn'));
+		return view('pages.home', compact('resources', 'titleResource', 'isShowAllResources', 'aboutText', 'logosText', 'notices', 'tutorials', 'loggedIn'));
 	}
 
 }

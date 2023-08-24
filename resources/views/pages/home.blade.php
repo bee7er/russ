@@ -117,6 +117,15 @@
         {!! $aboutText !!}
 
     </div>
+
+    @if($logosText)
+        <div id="about-row-container" class="row about-row-container" style="padding:0;">
+
+            {!! $logosText !!}
+
+        </div>
+    @endif
+
     <div class="go-top" onclick="scrollToAnchor('top');">
         <div id="goTopHand-about" class="bodymovin-hand" onmouseover="startBodymovinHand(ABOUT);"
              onmouseout="stopBodymovinHand(ABOUT);">
