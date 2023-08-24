@@ -112,16 +112,16 @@
         <div class="form-group  {{ $errors->has('backgroundColor') ? 'has-error' : '' }}">
             {!! Form::label('backgroundColor', trans("admin/resource.backgroundColor"), array('class' => 'control-label')) !!}
             <div class="controls">
-                {!! Form::text('backgroundColor', null, array('class' => 'form-control','placeholder' => 'ffffff')) !!}
-                <input type="color" />
+                <input class="" name="backgroundColor" type="color" value="#{{ isset($resource) ? $resource->backgroundColor: 'ffffff' }}">
+                (#{{ isset($resource) ? $resource->backgroundColor: 'ffffff' }})
                 <span class="help-block">{{ $errors->first('backgroundColor', ':message') }}</span>
             </div>
         </div>
         <div class="form-group  {{ $errors->has('creditTitleColor') ? 'has-error' : '' }}">
             {!! Form::label('creditTitleColor', trans("admin/resource.creditTitleColor"), array('class' => 'control-label')) !!}
             <div class="controls">
-                {!! Form::text('creditTitleColor', null, array('class' => 'form-control','placeholder' => '000000'))
-                 !!}
+                <input class="" name="creditTitleColor" type="color" value="#{{ isset($resource) ? $resource->creditTitleColor: 'ffffff' }}">
+                (#{{ isset($resource) ? $resource->creditTitleColor: 'ffffff' }})
                 <span class="help-block">{{ $errors->first('creditTitleColor', ':message') }}</span>
             </div>
         </div>

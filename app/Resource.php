@@ -36,6 +36,13 @@ class Resource extends Model
             $attributes['deleted_at'] = $attributes['isHidden'] ? date('Y-m-d H:i:s'): null;
             unset($attributes['isHidden']);
         }
+        // Remove hash from the colors
+        if (str_contains($attributes['backgroundColor'], '#')) {
+            $attributes['backgroundColor'] = str_replace('#', '', $attributes['backgroundColor']);
+        }
+        if (str_contains($attributes['creditTitleColor'], '#')) {
+            $attributes['creditTitleColor'] = str_replace('#', '', $attributes['creditTitleColor']);
+        }
 
         return parent::update($attributes);
     }

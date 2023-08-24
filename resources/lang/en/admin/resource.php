@@ -18,6 +18,6 @@ return [
     'useThumbHoverHelp' => 'If true, uses the thumb hover image. Not used for a MP4 thumb.',
     'isHidden' => 'Is the entire resource hidden, 1=Yes, 0=No',
     'url' => 'Video url',
-    'backgroundColor' => 'Background color, e.g. 001b8f',
-    'creditTitleColor' => 'Credit title color, e.g.00daff',
+    'backgroundColor' => 'Background color',
+    'creditTitleColor' => 'Credit title color',
 ];
