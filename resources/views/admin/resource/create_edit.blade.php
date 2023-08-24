@@ -26,7 +26,8 @@
         <div class="form-group  {{ $errors->has('template_id') ? 'has-error' : '' }}">
             {!! Form::label('template_id', trans("admin/admin.template"), array('class' => 'control-label')) !!}
             <div class="controls">
-                {!! Form::select('template_id', $templates, @isset($resource)? $resource->template_id : 'default', array
+                {{-- Template id 28 is the *Default template --}}
+                {!! Form::select('template_id', $templates, @isset($resource)? $resource->template_id : '28', array
                 ('class' => 'form-control')) !!}
                 <span class="help-block">{{ $errors->first('template_id', ':message') }}</span>
             </div>
