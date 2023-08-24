@@ -55,6 +55,8 @@
             "order": [],
             "ajax": "{{ url('admin/'.$type.'/data') }}",
             "pagingType": "full_numbers",
+            "lengthMenu": [ [10, 25, 50, -1], [10, 25, 50, "All"] ],
+            "pageLength": -1,
             "fnDrawCallback": function (oSettings) {
                 $(".iframe").colorbox({
                     iframe: true,

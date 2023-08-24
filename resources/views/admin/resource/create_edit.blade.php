@@ -60,7 +60,7 @@
             </div>
             <div class="thumb-help">{{ trans("admin/resource.titleThumbHelp") }}</div>
             @if (isset($resource) && $resource->titleThumb)
-                <img src="{{$resource->titleThumb}}" width="80">
+                <img src="{{url('/') . '/' . $resource->titleThumb}}" width="80">
             @endif
         </div>
         <div class="form-group {{ $errors->has('titleThumbHover') ? 'error' : '' }}">
@@ -70,7 +70,7 @@
                 {!! Form::text('titleThumbHover', null, array('class' => 'form-control')) !!}
             </div>
             @if (isset($resource) && $resource->titleThumbHover)
-                <img src="{{$resource->titleThumbHover}}" width="80">
+                <img src="{{url('/') . '/' . $resource->titleThumbHover}}" width="80">
             @endif
         </div>
         <div class="form-group {{ $errors->has('thumb') ? 'error' : '' }}">
@@ -81,7 +81,7 @@
             </div>
             <div class="thumb-help">{{ trans("admin/resource.thumbHelp") }}</div>
             @if (isset($resource) && $resource->thumb && false === strpos($resource->thumb, 'mp4'))
-                <img src="{{$resource->thumb}}" width="80">
+                <img src="{{url('/') . '/' . $resource->thumb}}" width="80">
             @endif
         </div>
         <div class="form-group {{ $errors->has('thumbHover') ? 'error' : '' }}">
@@ -91,7 +91,7 @@
                 {!! Form::text('thumbHover', null, array('class' => 'form-control')) !!}
             </div>
             @if (isset($resource) && $resource->thumbHover && false === strpos($resource->thumbHover, 'mp4'))
-                <img src="{{$resource->thumbHover}}" width="80">
+                <img src="{{url('/') . '/' . $resource->thumbHover}}" width="80">
             @endif
         </div>
         <div class="form-group {{ $errors->has('useThumbHover') ? 'error' : '' }}">
@@ -109,17 +109,11 @@
                 {!! Form::text('isClickable', null, array('class' => 'form-control')) !!}
             </div>
         </div>
-        <div class="form-group  {{ $errors->has('url') ? 'has-error' : '' }}">
-            {!! Form::label('url', trans("admin/resource.url"), array('class' => 'control-label')) !!}
-            <div class="controls">
-                {!! Form::text('url', null, array('class' => 'form-control')) !!}
-                <span class="help-block">{{ $errors->first('url', ':message') }}</span>
-            </div>
-        </div>
         <div class="form-group  {{ $errors->has('backgroundColor') ? 'has-error' : '' }}">
             {!! Form::label('backgroundColor', trans("admin/resource.backgroundColor"), array('class' => 'control-label')) !!}
             <div class="controls">
                 {!! Form::text('backgroundColor', null, array('class' => 'form-control','placeholder' => 'ffffff')) !!}
+                <input type="color" />
                 <span class="help-block">{{ $errors->first('backgroundColor', ':message') }}</span>
             </div>
         </div>

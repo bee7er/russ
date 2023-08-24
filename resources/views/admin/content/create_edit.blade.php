@@ -39,6 +39,13 @@
                 <span class="help-block">{{ $errors->first('title', ':message') }}</span>
             </div>
         </div>
+        <div class="form-group {{ $errors->has('useTitle') ? 'error' : '' }}">
+            <label class="control-label" for="useTitle">
+                Use title, 1=Yes, 0=No</label>
+            <div class="controls">
+                <input class="form-control" name="useTitle" type="text" value="{{ isset($content) && $content->useTitle ? '1': '0' }}">
+            </div>
+        </div>
         <div class="form-group  {{ $errors->has('url') ? 'has-error' : '' }}">
             {!! Form::label('Image url', trans("admin/content.url"), array('class' => 'control-label')) !!}
             <div class="controls">

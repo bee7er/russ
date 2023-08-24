@@ -118,7 +118,6 @@ class ResourceController extends AdminController
                     'description' => $resource->description,
                     'template' => isset($resource->template) ? $resource->template->name : "Unknown",
                     'deleted_at' => $resource->deleted_at ? 'Hidden': 'Visible',
-                    'created_at' => $resource->created_at->format('d/m/Y'),
                 ];
             });
     }

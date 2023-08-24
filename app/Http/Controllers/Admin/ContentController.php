@@ -126,6 +126,7 @@ class ContentController extends AdminController
                     'id' => $content->id,
                     'seq' => $content->seq,
                     'title' => $content->title,
+                    'useTitle' => $content->useTitle ? 'Yes': 'No',
                     'created_at' => $content->created_at->format('d/m/Y'),
                 ];
             });

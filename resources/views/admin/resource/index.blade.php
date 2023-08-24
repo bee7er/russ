@@ -28,7 +28,6 @@
             <th>{!! trans("admin/resource.description") !!}</th>
             <th>{!! trans("admin/resource.template") !!}</th>
             <th>{!! trans("admin/admin.deleted_at") !!}</th>
-            <th>{!! trans("admin/admin.created_at") !!}</th>
             <th>{!! trans("admin/admin.action") !!}</th>
         </tr>
         </thead>
@@ -39,8 +38,7 @@
                 @foreach ($resources as $resource)
                     <div class="col-md-6">
                         <div class="row">
-                            <div class="col-md-8">
-                            </div>
+                            <div class="col-md-8"></div>
                         </div>
                     </div>
                 @endforeach

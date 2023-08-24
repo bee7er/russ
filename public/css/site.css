@@ -20644,9 +20644,15 @@ body {
   height: 0;
 }
 
-p a {
+p a,
+p a:active,
+p a:visited {
   color: #fff;
   text-decoration: underline;
+}
+
+p a:hover {
+  color: #e2e2e2;
 }
 
 /* Media queries */
@@ -20657,7 +20663,7 @@ p a {
   .logo-menu-container,
   .about-row-container,
   .fish-tank-row-container,
-  .template-row-container {
+  .template-row-container {,
     padding: 0;
     width: 80%;
   }

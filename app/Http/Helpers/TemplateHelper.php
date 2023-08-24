@@ -124,6 +124,11 @@ class TemplateHelper
 
 		if (count($contents) > 0) {
 			foreach ($contents as $content) {
+				// If title is set
+				if (1 === $content->useTitle) {
+					$html .= '<div class="template-credits-title">' . $content->title . '</div>';
+				}
+				// Check the type of content
 				if ('' !== trim($content->videoUrl)) {
 					$html .= self::generateVideoUrlContents($resource, $content);
 				} elseif ('' !== trim($content->url)) {

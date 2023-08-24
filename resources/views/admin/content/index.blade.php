@@ -24,6 +24,7 @@
         <tr>
             <th>{!! trans("admin/content.seq") !!}</th>
             <th>{!! trans("admin/content.title") !!}</th>
+            <th>{!! trans("admin/content.useTitle") !!}</th>
             <th>{!! trans("admin/admin.created_at") !!}</th>
             <th>{!! trans("admin/admin.action") !!}</th>
         </tr>
