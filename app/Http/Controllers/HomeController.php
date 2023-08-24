@@ -18,6 +18,7 @@ class HomeController extends Controller
 {
 	const ABOUT_TEMPLATE = '*About';
 	const LOGOS_TEMPLATE = '*Logos';
+	const CONTACT_TEMPLATE = '*Contact';
 
 	/**
 	 * The Guard implementation.
@@ -168,12 +169,15 @@ class HomeController extends Controller
 		$logos = Template::where([ 'name' => self::LOGOS_TEMPLATE, 'deleted_at' => null ])->get()->first();
 		$logosText = $logos ? $logos->container: null;
 
+		$contact = Template::where([ 'name' => self::CONTACT_TEMPLATE, 'deleted_at' => null ])->get()->first();
+		$contactText = $contact ? $contact->container: null;
+
 		$loggedIn = false;
 		if ($this->auth->check()) {
 			$loggedIn = true;
 		}
 
-		return view('pages.home', compact('resources', 'titleResource', 'isShowAllResources', 'aboutText', 'logosText', 'notices', 'tutorials', 'loggedIn'));
+		return view('pages.home', compact('resources', 'titleResource', 'isShowAllResources', 'aboutText', 'logosText', 'contactText', 'notices', 'tutorials', 'loggedIn'));
 	}
 
 }
