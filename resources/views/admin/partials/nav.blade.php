@@ -54,7 +54,7 @@
                 </li>
                 <li>
                     <a href="{{url('admin/notice')}}">
-                        <i class="glyphicon glyphicon-eye-open"></i> Blog Entries
+                        <i class="glyphicon glyphicon-eye-open"></i> News
                     </a>
                 </li>
                 <li>
