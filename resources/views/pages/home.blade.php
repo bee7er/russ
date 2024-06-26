@@ -162,7 +162,9 @@
         <div style="visibility: hidden;">
             @foreach($resources as $resource)
                 <img src="{!! $resource->thumb !!}" class="hidden-preload">
-                <img src="{!! $resource->hover !!}" class="hidden-preload">
+                @if ($resource->thumb != $resource->thumbHover)
+                    <img src="{!! $resource->thumbHover !!}" class="hidden-preload">
+                @endif
             @endforeach
         </div>
     @endif

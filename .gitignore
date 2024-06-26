@@ -1,5 +1,8 @@
 /.idea
 /.DS*
+/public/.DS*
+/public/js/.DS*
+/resources/.DS*
 /vendor
 /node_modules
 .env
