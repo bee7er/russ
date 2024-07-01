@@ -20703,4 +20703,8 @@ p a:hover {
   .video-frame {
     border: 0;
   }
+
+  .tutorial-thumb {
+    width: 120px;
+  }
 }
