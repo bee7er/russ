@@ -51,34 +51,31 @@
     @if(count($tutorials)>0)
         <div id="tutorials" class="panel-title">tutorials</div>
             <div class="row news-row-container news-adjust-div" style="max-width: 70%;">
-                <div class="col-xs-12 col-sm-12 col-md-12 col-lg-12 news-text">
-                    <table class="tutorial-table">
+                <div class="col-xs-12 col-sm-12 col-md-12 col-lg-12 tutorial-text">
                         @foreach($tutorials as $tutorial)
 
                             <?php $url = ($tutorial->url ? $tutorial->url: "#") ?>
 
-                            <tr style="vertical-align: top;">
-                                <td>
-                                    @if($tutorial->thumb)
-                                        <?php print TemplateHelper::getImageLink($tutorial->url, $tutorial->thumb); ?>
-                                    @else
-                                        &nbsp;
-                                    @endif
-                                </td>
-                                <td>
-                                    @if($tutorial->title)
-                                        <?php print TemplateHelper::getTextLink($tutorial->url, $tutorial->title); ?>
-                                    @else
-                                        &nbsp;
-                                    @endif
-                                    @if($tutorial->html)
-                                        {!! $tutorial->html !!}
-                                    @endif
-                                </td>
+                            <div class="tutorial-left">
+                                @if($tutorial->thumb)
+                                    <?php print TemplateHelper::getImageLink($tutorial->url, $tutorial->thumb); ?>
+                                @else
+                                    &nbsp;
+                                @endif
+                            </div>
+                            <div class="tutorial-right">
+                                @if($tutorial->title)
+                                    <?php print TemplateHelper::getTextLink($tutorial->url, $tutorial->title); ?>
+                                @else
+                                    &nbsp;
+                                @endif
+                                @if($tutorial->html)
+                                    {!! $tutorial->html !!}
+                                @endif
+                            </div>
+                            <div style="clear: both">&nbsp;</div>
 
-                            </tr>
                         @endforeach
-                    </table>
                 </div>
             </div>
         <div class="go-top" onclick="scrollToAnchor('top');">

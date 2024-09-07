@@ -20637,7 +20637,29 @@ body {
   padding: 8px;
 }
 .tutorial-thumb {
-  width: 260px;
+  width: 80%;
+}
+
+.tutorial-text {
+  padding: 15px;
+}
+.tutorial-left {
+  margin: 0;
+  padding: 0;
+  width: 40%;
+  vertical-align: top;
+  float: left;
+  text-align: left;
+}
+.tutorial-right {
+  margin: 0;
+  padding: 0;
+  margin-top: -7px;
+  width: 60%;
+  vertical-align: top;
+  float: right;
+  text-align: left;
+  border: 0px solid red;
 }
 
 #home {
@@ -20670,7 +20692,7 @@ p a:hover {
   }
 }
 
-@media (max-width: 768px) {
+@media (max-width: 860px) {
   .row-container,
   .title-row-container,
   .logo-menu-container,
@@ -20705,6 +20727,23 @@ p a:hover {
   }
 
   .tutorial-thumb {
-    width: 120px;
+    width: 95%;
+  }
+}
+
+@media (max-width: 500px) {
+  .tutorial-thumb {
+    width: 80%;
+  }
+  .tutorial-left {
+    float: none;
+    width: 95%;
+    text-align: center;
+    margin-bottom: 5px;
+  }
+  .tutorial-right {
+    float: none;
+    width: 95%;
+    margin-top: 0px;
   }
 }

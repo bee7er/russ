@@ -17,7 +17,7 @@
         <meta property="og:image" content="/img/thumbs/armstrong_hv.jpg">
         <meta property="og:description" content="Russ Etheridge is a freelance Animator, Director and Designer. Please get in touch for more info and availability!">
 
-		<link href="{{ asset('css/site.css?v7') }}" rel="stylesheet">
+		<link href="{{ asset('css/site.css?v9') }}" rel="stylesheet">
         <script src="{{ asset('js/site.js?v5') }}"></script>
 
     @yield('styles')
