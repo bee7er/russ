@@ -5,7 +5,9 @@
     <div class="hidden-xs hidden-sm col-md-12 col-lg-12 header-block">
         <div class="header-menu-left"><span onclick="gotoPage
         ('home');">Russ Etheridge</span></div>
-        <div class="header-menu-right"><span onclick="gotoPage('home');"
+        <div class="header-menu-right"><span onclick="gotoPage('showreel');"
+                                                                           onmouseover="$(this).addClass('white-link-hover');"
+                                                                           onmouseout="$(this).removeClass('white-link-hover')">showreel</span><img class="square" src="{{config('app.base_url')}}img/square.png" /><span onclick="filterByCategory('all');"
                                                                            onmouseover="$(this).addClass('white-link-hover');"
                                                                            onmouseout="$(this).removeClass('white-link-hover')">work</span><img class="square" src="{{config('app.base_url')}}img/square.png" /><span onclick="gotoPage('tutorials');" onmouseover="$(this).addClass('white-link-hover')" onmouseout="$(this).removeClass('white-link-hover')">tutorials</span><img class="square" src="{{config('app.base_url')}}img/square.png" /><span onclick="gotoPage('about');" onmouseover="$(this).addClass('white-link-hover')" onmouseout="$(this).removeClass('white-link-hover')">about</span><img class="square" src="{{config('app.base_url')}}img/square.png" /><span  onclick="gotoPage('contact');" onmouseover="$(this).addClass('white-link-hover')"
                                                                  onmouseout="$(this).removeClass('white-link-hover')">contact</span>@if(isset($notices) && count($notices)>0)<img class="square" src="{{config('app.base_url')}}img/square.png" /><span onclick="gotoPage('news');" onmouseover="$(this).addClass('white-link-hover')" onmouseout="$(this).removeClass('white-link-hover')">news</span>@endif</div>
@@ -19,7 +21,10 @@
         </div>
     </div>
     <div class="hidden-xs col-sm-12 hidden-md hidden-lg header-block">
-        <span onclick="gotoPage('home');" onmouseover="$(this).addClass('white-link-hover');"
+        <span onclick="gotoPage('showreel');" onmouseover="$(this).addClass('white-link-hover');"
+              onmouseout="$(this).removeClass('white-link-hover')">showreel</span>
+        <img class="square" src="{{config('app.base_url')}}img/square.png" />
+        <span onclick="filterByCategory('all');" onmouseover="$(this).addClass('white-link-hover');"
               onmouseout="$(this).removeClass('white-link-hover')">work</span>
         <img class="square" src="{{config('app.base_url')}}img/square.png" />
         <span onclick="gotoPage('tutorials');" onmouseover="$(this).addClass('white-link-hover')"
@@ -57,26 +62,37 @@
             <tbody>
             <tr>
                 <td class="logo-menu-table-left">
-                    <span class="white-link" onclick="gotoPage('home');" onmouseover="$(this).addClass('white-link-hover');"
-                          onmouseout="$(this).removeClass('white-link-hover')">work</span>
+                    <span class="white-link" onclick="gotoPage('showreel');" onmouseover="$(this).addClass('white-link-hover');"
+                          onmouseout="$(this).removeClass('white-link-hover')">showreel</span>
                 </td>
                 <td class="square-vertical logo-menu-table-center"><img src="{{config('app.base_url')}}img/square.png"
                     /></td>
                 <td class="logo-menu-table-right">
-                    <span class="white-link" onclick="gotoPage('tutorials');" onmouseover="$(this).addClass('white-link-hover')"
-                          onmouseout="$(this).removeClass('white-link-hover')">tutorials</span>
+                    <span class="white-link" onclick="filterByCategory('all');" onmouseover="$(this).addClass('white-link-hover');"
+                          onmouseout="$(this).removeClass('white-link-hover')">work</span>
                 </td>
             </tr>
             <tr>
+                <td class="logo-menu-table-left">
+                    <span class="white-link" onclick="gotoPage('tutorials');" onmouseover="$(this).addClass('white-link-hover')"
+                          onmouseout="$(this).removeClass('white-link-hover')">tutorials</span>
+                </td>
+                <td class="square-vertical logo-menu-table-center"><img src="{{config('app.base_url')}}img/square.png"
+                    /></td>
                 <td class="logo-menu-table-right">
                     <span class="white-link" onclick="gotoPage('about');" onmouseover="$(this).addClass('white-link-hover')"
                           onmouseout="$(this).removeClass('white-link-hover')">about</span>
                 </td>
-                <td class="square-vertical logo-menu-table-center"><img src="{{config('app.base_url')}}img/square.png" /></td>
-                <td class="logo-menu-table-left">
+            </tr>
+            <tr>
+                <td class="logo-menu-table-right">
                     <span class="white-link" onclick="gotoPage('contact');" onmouseover="$(this).addClass('white-link-hover')"
                           onmouseout="$(this).removeClass('white-link-hover')
                                                     ">contact</span>
+                </td>
+                <td class="square-vertical logo-menu-table-center">&nbsp;</td>
+                <td class="logo-menu-table-left">
+                    &nbsp;
                 </td>
             </tr>
             @if(isset($notices) && count($notices)>0)
@@ -142,15 +158,19 @@
 
         function gotoPage(aid)
         {
-            @if (Request::is('/') || Request::is('home'))
-                scrollToAnchor(aid);
-            @else
-            if (aid == "home") {
-                document.location = ("{{config('app.base_url')}}");
+            if (aid == "showreel") {
+                document.location = ("{{config('app.base_url')}}" + "showreel");
             } else {
-                document.location = ("{{config('app.base_url')}}" + "home#" + aid);
+                @if (Request::is('/') || Request::is('home'))
+                    scrollToAnchor(aid);
+                @else
+                if (aid == "home") {
+                    document.location = ("{{config('app.base_url')}}");
+                } else {
+                    document.location = ("{{config('app.base_url')}}" + "home#" + aid);
+                }
+                @endif
             }
-            @endif
         }
 
         function scrollToAnchor(aid)
