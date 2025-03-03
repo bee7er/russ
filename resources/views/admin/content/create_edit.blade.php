@@ -54,7 +54,9 @@
             </div>
         </div>
         <div class="form-group  {{ $errors->has('html') ? 'has-error' : '' }}">
-            {!! Form::label('HTML', trans("admin/content.html"), array('class' => 'control-label')) !!}
+            {!! Form::label('HTML', trans("admin/content.html"), array('class' => 'control-label')) !!}<br />
+            <span>To enter HTML content click menu option &lt;/&gt;.</span><br />
+            <span>When you have finished editing HTML click menu option &lt;/&gt; once more to see the result rendered.</span>
             <div class="controls">
                 {!! Form::textarea('html', null, array('class' => 'form-control')) !!}
                 <span class="help-block">{{ $errors->first('html', ':message') }}</span>
