@@ -16,6 +16,17 @@
     @endif
 
     @if(count($resources)>0)
+
+        {{-- Preload images --}}
+        <div style="visibility: hidden;">
+            @foreach($resources as $resource)
+                <img src="{!! $resource->thumb !!}" class="hidden-preload">
+                @if ($resource->thumb != $resource->thumbHover)
+                    <img src="{!! $resource->thumbHover !!}" class="hidden-preload">
+                @endif
+            @endforeach
+        </div>
+
         <div class="row-container">
             <div class="row">
                 @foreach($resources as $resource)
@@ -153,18 +164,6 @@
              onmouseout="stopBodymovinHand(CONTACT);">
         </div>
     </div>
-
-    @if(count($resources)>0)
-        {{-- Preload images --}}
-        <div style="visibility: hidden;">
-            @foreach($resources as $resource)
-                <img src="{!! $resource->thumb !!}" class="hidden-preload">
-                @if ($resource->thumb != $resource->thumbHover)
-                    <img src="{!! $resource->thumbHover !!}" class="hidden-preload">
-                @endif
-            @endforeach
-        </div>
-    @endif
 
 @endsection
 
