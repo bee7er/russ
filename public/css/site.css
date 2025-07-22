@@ -20574,6 +20574,9 @@ body {
   text-align: center;
   padding: 0 20px;
   cursor: pointer;
+  color: #fff;
+  font-weight: bold;
+  font-size: 24px;
 }
 
 .white-link-hover, .active-filter {
@@ -20587,23 +20590,6 @@ body {
 .social-icon {
   width: 30px;
   margin: 8px;
-}
-
-.bodymovin-fishtank {
-  width: 100%;
-  height: 100%;
-  background-color: #002DFF;
-}
-
-.bodymovin-diver {
-  /* height and width definitions caused Safari to freak out */
-  background-color: #fff;
-}
-
-.bodymovin-hand {
-  width: 150px;
-  height: 150px;
-  margin: 30px auto 0 auto;
 }
 
 .hidden-preload {

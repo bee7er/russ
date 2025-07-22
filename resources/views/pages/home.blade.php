@@ -53,9 +53,7 @@
             </div>
         </div>
         <div class="go-top" onclick="scrollToAnchor('top');">
-            <div id="goTopHand-work" class="bodymovin-hand" onmouseover="startBodymovinHand(WORK);"
-                 onmouseout="stopBodymovinHand(WORK);">
-            </div>
+            GO TOP
         </div>
     @endif
 
@@ -90,9 +88,7 @@
                 </div>
             </div>
         <div class="go-top" onclick="scrollToAnchor('top');">
-            <div id="goTopHand-tutorials" class="bodymovin-hand" onmouseover="startBodymovinHand(TUTORIALS);"
-                 onmouseout="stopBodymovinHand(TUTORIALS);">
-            </div>
+            GO TOP
         </div>
     @endif
 
@@ -112,9 +108,7 @@
                 </div>
             </div>
         <div class="go-top" onclick="scrollToAnchor('top');">
-            <div id="goTopHand-press" class="bodymovin-hand" onmouseover="startBodymovinHand(PRESS);"
-                 onmouseout="stopBodymovinHand(PRESS);">
-            </div>
+            GO TOP
         </div>
     @endif
 
@@ -135,9 +129,7 @@
     @endif
 
     <div class="go-top" onclick="scrollToAnchor('top');">
-        <div id="goTopHand-about" class="bodymovin-hand" onmouseover="startBodymovinHand(ABOUT);"
-             onmouseout="stopBodymovinHand(ABOUT);">
-        </div>
+        GO TOP
     </div>
 
     <div id="contact" class="panel-title">contact</div>
@@ -145,43 +137,18 @@
 
         {!! $contactText !!}
 
-        {{--<div class="col-xs-12 col-sm-12 col-md-12 col-lg-12 contact-text">--}}
-            {{--<p>Have a project in mind, or just want to say hi?</p>--}}
-            {{--<p>I’d love to hear from you!</p>--}}
-            {{--<p>--}}
-                {{--<a href="javascript: mail2('contact','russ','etheridge','com')"><img class="col-xs-12 col-sm-12 col-md-12 col-lg-12" src="img/contact3.png" title=""></a>--}}
-            {{--</p>--}}
-            {{--<p class="center-text">Follow me!</p>--}}
-            {{--<p class="center-text"><a target="_blank" href="https://www.instagram.com/russ_ether/"><img src="img/social/instagram.png" class="social-icon" title="Share on instagram" /></a><a target="_blank" href="https://www.linkedin.com/in/russether"><img src="img/social/linkedin.png" class="social-icon" title="Share on linkedin" /></a><a target="_blank" href="https://twitter.com/russ_ether"><img src="img/social/twitter.png" class="social-icon" title="Share on twitter" /></a></p>--}}
-        {{--</div>--}}
-
-        {{--<div class="col-xs-12 col-sm-12 col-md-12 col-lg-12 contact-text"><p>Have a project in mind, or just want to say hi?</p><p>I’d love to hear from you!</p><p><a href="mailto: contact'@russetheridge.com"><img class="col-xs-12 col-sm-12 col-md-12 col-lg-12" src="img/contact3.png" title=""></a></p><p class="center-text">Follow me!</p></div><div><p class="center-text"><a target="_blank" href="https://www.instagram.com/russ_ether/"><img src="img/social/instagram.png" class="social-icon" title="Share on instagram" /></a><a target="_blank" href="https://www.linkedin.com/in/russether"><img src="img/social/linkedin.png" class="social-icon" title="Share on linkedin" /></a><a target="_blank" href="https://twitter.com/russ_ether"><img src="img/social/twitter.png" class="social-icon" title="Share on twitter" /></a></p></div>--}}
-
-
     </div>
     <div class="go-top" onclick="scrollToAnchor('top');">
-        <div id="goTopHand-contact" class="bodymovin-hand" onmouseover="startBodymovinHand(CONTACT);"
-             onmouseout="stopBodymovinHand(CONTACT);">
-        </div>
+        GO TOP
     </div>
 
 @endsection
 
 @section('page-scripts')
     <script type="text/javascript">
-        var WORK = 0;
-        var ABOUT  = 1;
-        var CONTACT = 2;
-        var PRESS = 3;
-        var TUTORIALS = 4;
         $(document).ready( function()
         {
-            // Setup the goto top hands and store them in an array
-            handAnims[WORK] = createBodymovinHand(document.getElementById('goTopHand-work'));
-            handAnims[ABOUT] = createBodymovinHand(document.getElementById('goTopHand-about'));
-            handAnims[CONTACT] = createBodymovinHand(document.getElementById('goTopHand-contact'));
-            handAnims[PRESS] = createBodymovinHand(document.getElementById('goTopHand-press'));
-            handAnims[TUTORIALS] = createBodymovinHand(document.getElementById('goTopHand-tutorials'));
+
         });
     </script>
 @endsection

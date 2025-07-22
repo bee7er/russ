@@ -22,7 +22,7 @@
                                 </button>
                             </div>
                         </div>
-                        {!! FOrm::close() !!}
+                        {!! Form::close() !!}
                     </div>
                 </div>
             </div>
