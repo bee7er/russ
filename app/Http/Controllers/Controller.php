@@ -4,8 +4,6 @@ namespace App\Http\Controllers;
 
 
 use Illuminate\Foundation\Bus\DispatchesJobs;
-use Illuminate\Http\Request;
-use Illuminate\Http\Response;
 use Illuminate\Routing\Controller as BaseController;
 use Illuminate\Foundation\Validation\ValidatesRequests;
 use Illuminate\Foundation\Auth\Access\AuthorizesRequests;
@@ -18,16 +16,25 @@ abstract class Controller extends BaseController
 {
     use AuthorizesRequests, DispatchesJobs, ValidatesRequests;
 
-    public function setCookie(Request $request)
+    /**
+     * Set a cookie to a given value
+     * @param $cookieName
+     * @param $value
+     */
+    public static function setCookie($cookieName, $value)
     {
-        $response = new Response('Set Cookie');
-        $response->withCookie(cookie('loadAll', $request->get('loadAll'), 0));
-        return $response;
+        $_COOKIE[$cookieName] = $value;
     }
 
-    public function getCookie(Request $request)
+    /**
+     * Retrieve a cookie value providing a default
+     * @param $cookieName
+     * @param $default
+     * @return mixed
+     */
+    public static function getCookie($cookieName, $default)
     {
-        $value = $request->cookie('loadAll');
-        echo $value;
+        $value = isset($_COOKIE[$cookieName]) ? $_COOKIE[$cookieName]: $default;
+        return $value;
     }
 }

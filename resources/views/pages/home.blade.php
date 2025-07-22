@@ -52,9 +52,10 @@
                 @endforeach
             </div>
 
-            <input type="hidden" id="loadAll" name="loadAll" value="{{$loadAll}}"/>
-            @if(1 != $loadAll)
-                <i class="fa fa-btn fa-plus load-all" onclick="loadAllResources();"></i>
+            @if(1 != $cookieLoadAll)
+                <i class="fa fa-btn fa-plus load-all" onclick="loadAllResources();" title="Show more works"></i>
+            @else
+                <i class="fa fa-btn fa-minus load-all" onclick="loadFewResources();" title="Show fewer works"></i>
             @endif
         </div>
     @endif
@@ -88,12 +89,6 @@
 
 @section('page-scripts')
     <script type="text/javascript">
-
-        function loadAllResources()
-        {
-            document.location = ("{{config('app.base_url')}}" + "home?loadAll=1");
-        }
-
         $(document).ready( function()
         {
 

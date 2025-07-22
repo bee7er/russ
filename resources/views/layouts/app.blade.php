@@ -17,7 +17,7 @@
         <meta property="og:image" content="/img/thumbs/armstrong_hv.jpg">
         <meta property="og:description" content="Russ Etheridge is a freelance Animator, Director and Designer. Please get in touch for more info and availability!">
 
-		<link href="{{ asset('css/site.css?v11') }}" rel="stylesheet">
+		<link href="{{ asset('css/site.css?v12') }}" rel="stylesheet">
         <script src="{{ asset('js/site.js?v7') }}"></script>
 
     @yield('styles')
@@ -64,29 +64,47 @@
 
 <script type="text/javascript">
     // Delete the cookie for testing purposes
-    //document.cookie = "cookieWarningAccepted=; Max-Age=0; path=/;";
+//    document.cookie = "cookieWarningAccepted=; Max-Age=0; path=/;";
+//    document.cookie = "cookieLoadAll=; Max-Age=0; path=/;";
+//    document.cookie = "loadAll=; Max-Age=0; path=/;";
+    //console.log(document.cookie);
+    // Function to set a cookie
+    function setCookie(name, value, days) {
+        const d = new Date();
+        d.setTime(d.getTime() + (days * 24 * 60 * 60 * 1000));
+        const expires = "expires=" + d.toUTCString();
+        document.cookie = name + "=" + value + ";" + expires + ";path=/";
+    }
+
+    // Function to check if a cookie exists
+    function checkCookie(name) {
+        const nameEQ = name + "=";
+        const ca = document.cookie.split(';');
+        for (let i = 0; i < ca.length; i++) {
+            let c = ca[i];
+            while (c.charAt(0) == ' ') c = c.substring(1, c.length); // Trim whitespace
+            if (c.indexOf(nameEQ) == 0) return true; // Cookie found
+        }
+        return false; // Cookie not found
+    }
+
+    function loadAllResources()
+    {
+        // Set a cookie to remember that the user wishes to see all resources
+        setCookie("cookieLoadAll", 1, 7); // Cookie expires in 7 days
+        document.location = ("{{config('app.base_url')}}" + "home");
+    }
+
+    function loadFewResources()
+    {
+        // Set a cookie to remember that the user wishes to see fewer resources
+        setCookie("cookieLoadAll", 0, 7); // Cookie expires in 7 days
+        document.location = ("{{config('app.base_url')}}" + "home");
+    }
+
     document.addEventListener("DOMContentLoaded", function () {
         const cookieWarning = document.getElementById('cookie-warning');
         const closeBtn = document.getElementById('close-warning');
-        // Function to set a cookie
-        function setCookie(name, value, days) {
-            const d = new Date();
-            d.setTime(d.getTime() + (days * 24 * 60 * 60 * 1000));
-            const expires = "expires=" + d.toUTCString();
-            document.cookie = name + "=" + value + ";" + expires + ";path=/";
-        }
-
-        // Function to check if a cookie exists
-        function checkCookie(name) {
-            const nameEQ = name + "=";
-            const ca = document.cookie.split(';');
-            for (let i = 0; i < ca.length; i++) {
-                let c = ca[i];
-                while (c.charAt(0) == ' ') c = c.substring(1, c.length); // Trim whitespace
-                if (c.indexOf(nameEQ) == 0) return true; // Cookie found
-            }
-            return false; // Cookie not found
-        }
 
         // Check if the cookie warning has been accepted
         if (!checkCookie("cookieWarningAccepted")) {

@@ -8,6 +8,7 @@ use App\Notice;
 use App\Resource;
 use App\Template;
 use Illuminate\Http\Request;
+use Illuminate\Support\Facades\Cookie;
 
 /**
  * Class HomeController
@@ -15,7 +16,7 @@ use Illuminate\Http\Request;
  */
 class HomeController extends Controller
 {
-	const INITIAL_LOAD = 6;
+	const INITIAL_LOAD = 7;
 	const LOGOS_TEMPLATE = '*Logos';
 
 	/**
@@ -47,10 +48,11 @@ class HomeController extends Controller
 		// NB We initially load only a maximum of 6 resources
 		//// Once loaded the user can request more, in which case we load all that are available
 		$maxLoad = self::INITIAL_LOAD;
-		$loadAll = $request->get('loadAll');
-		if (isset($loadAll) && 1 == $loadAll) {
+		$cookieLoadAll = $this->getCookie('cookieLoadAll', 0);
+		if (isset($cookieLoadAll) && 1 == $cookieLoadAll) {
 			$maxLoad = 999;
 		}
+
 		$category = trim($request->input('category'));
 
 		$builder = Resource::select(
@@ -159,7 +161,8 @@ class HomeController extends Controller
 			$loggedIn = true;
 		}
 
-		return view('pages.home', compact('resources', 'loadAll', 'titleResource', 'isShowAllResources', 'logosText', 'notices', 'loggedIn'));
+		return view('pages.home', compact('resources', 'cookieLoadAll',
+			'titleResource', 'isShowAllResources', 'logosText', 'notices', 'loggedIn'));
 	}
 
 }
