@@ -158,8 +158,13 @@
 
         function gotoPage(aid)
         {
-            if (aid == "showreel") {
-                document.location = ("{{config('app.base_url')}}" + "showreel");
+            if (
+                    aid == "showreel"
+                    || aid == "tutorials"
+                    || aid == "about"
+                    || aid == "contact"
+            ) {
+                document.location = ("{{config('app.base_url')}}" + aid);
             } else {
                 @if (Request::is('/') || Request::is('home'))
                     scrollToAnchor(aid);

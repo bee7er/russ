@@ -16,9 +16,7 @@ use Illuminate\Http\Request;
  */
 class HomeController extends Controller
 {
-	const ABOUT_TEMPLATE = '*About';
 	const LOGOS_TEMPLATE = '*Logos';
-	const CONTACT_TEMPLATE = '*Contact';
 
 	/**
 	 * The Guard implementation.
@@ -146,35 +144,15 @@ class HomeController extends Controller
 			->orderBy("notices.seq")
 			->limit(999)->get();
 
-		$tutorials = Tutorial::select(
-			array(
-				'tutorials.id',
-				'tutorials.seq',
-				'tutorials.thumb',
-				'tutorials.title',
-				'tutorials.url',
-				'tutorials.html',
-				'tutorials.deleted_at'
-			)
-		)
-			->orderBy("tutorials.seq")
-			->limit(999)->get();
-
-		$about = Template::where([ 'name' => self::ABOUT_TEMPLATE, 'deleted_at' => null ])->get()->first();
-		$aboutText = $about ? $about->container: null;
-
 		$logos = Template::where([ 'name' => self::LOGOS_TEMPLATE, 'deleted_at' => null ])->get()->first();
 		$logosText = $logos ? $logos->container: null;
-
-		$contact = Template::where([ 'name' => self::CONTACT_TEMPLATE, 'deleted_at' => null ])->get()->first();
-		$contactText = $contact ? $contact->container: null;
 
 		$loggedIn = false;
 		if ($this->auth->check()) {
 			$loggedIn = true;
 		}
 
-		return view('pages.home', compact('resources', 'titleResource', 'isShowAllResources', 'aboutText', 'logosText', 'contactText', 'notices', 'tutorials', 'loggedIn'));
+		return view('pages.home', compact('resources', 'titleResource', 'isShowAllResources', 'logosText', 'notices', 'loggedIn'));
 	}
 
 }

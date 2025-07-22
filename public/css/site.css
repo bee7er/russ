@@ -20413,6 +20413,7 @@ body {
 
 .contact-row-container {
   margin-top: 0;
+  margin-bottom: 0;
   padding: 20px;
   width: 30%;
   text-align: center;
@@ -20537,6 +20538,9 @@ body {
 }
 
 .panel-title,
+.about-panel-title,
+.contact-panel-title,
+.tutorial-panel-title,
 .template-title,
 .template-details-title,
 .template-credits-title {
@@ -20553,6 +20557,10 @@ body {
 
 .template-details-title {
   font-size: 64px;
+}
+
+.about-panel-title, .contact-panel-title, .tutorial-panel-title {
+  margin: 20px 0;
 }
 
 .template-credits-title {
@@ -20712,12 +20720,6 @@ p a:hover {
   .template-row-container {
     padding: 0;
     width: 90%;
-  }
-
-  .contact-row-container,
-  .merch-row-container,
-  .news-row-container {
-    width: 70%;
   }
 
   .template-credits-row-container {
