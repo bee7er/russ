@@ -20577,7 +20577,7 @@ body {
   font-weight: bold;
 }
 
-.go-top {
+.go-top, .load-all {
   margin: 0 auto;
   text-align: center;
   padding: 0 20px;
@@ -20585,6 +20585,15 @@ body {
   color: #fff;
   font-weight: bold;
   font-size: 24px;
+}
+
+.load-all {
+  font-size: 48px;
+  margin-top: 30px;
+}
+
+.load-all:hover {
+  cursor: pointer;
 }
 
 .white-link-hover, .active-filter {

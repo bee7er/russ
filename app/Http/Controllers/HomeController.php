@@ -6,7 +6,6 @@ use Illuminate\Auth\Guard;
 
 use App\Notice;
 use App\Resource;
-use App\Tutorial;
 use App\Template;
 use Illuminate\Http\Request;
 
@@ -16,6 +15,7 @@ use Illuminate\Http\Request;
  */
 class HomeController extends Controller
 {
+	const INITIAL_LOAD = 6;
 	const LOGOS_TEMPLATE = '*Logos';
 
 	/**
@@ -44,6 +44,13 @@ class HomeController extends Controller
 	 */
 	public function index(Request $request)
 	{
+		// NB We initially load only a maximum of 6 resources
+		//// Once loaded the user can request more, in which case we load all that are available
+		$maxLoad = self::INITIAL_LOAD;
+		$loadAll = $request->get('loadAll');
+		if (isset($loadAll) && 1 == $loadAll) {
+			$maxLoad = 999;
+		}
 		$category = trim($request->input('category'));
 
 		$builder = Resource::select(
@@ -68,7 +75,7 @@ class HomeController extends Controller
 			)
 		)
 			->orderBy("resources.seq")
-			->limit(999);
+			->limit($maxLoad);
 
 		// Ok, may not show all
 		$isShowAllResources = false;
@@ -152,7 +159,7 @@ class HomeController extends Controller
 			$loggedIn = true;
 		}
 
-		return view('pages.home', compact('resources', 'titleResource', 'isShowAllResources', 'logosText', 'notices', 'loggedIn'));
+		return view('pages.home', compact('resources', 'loadAll', 'titleResource', 'isShowAllResources', 'logosText', 'notices', 'loggedIn'));
 	}
 
 }
