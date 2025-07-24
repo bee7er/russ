@@ -16,7 +16,6 @@ use Illuminate\Support\Facades\Cookie;
 class HomeController extends Controller
 {
 	const INITIAL_LOAD = 7;
-	const LOGOS_TEMPLATE = '*Logos';
 
 	/**
 	 * The Guard implementation.
@@ -140,9 +139,6 @@ class HomeController extends Controller
 			}
 		}
 
-		$logos = Template::where([ 'name' => self::LOGOS_TEMPLATE, 'deleted_at' => null ])->get()->first();
-		$logosText = $logos ? $logos->container: null;
-
 		$loggedIn = false;
 		if ($this->auth->check()) {
 			$loggedIn = true;
@@ -151,7 +147,7 @@ class HomeController extends Controller
 		$currentPage = 'home';
 
 		return view('pages.home', compact('resources', 'cookieLoadAll',
-			'titleResource', 'isShowAllResources', 'logosText', 'loggedIn', 'currentPage'));
+			'titleResource', 'isShowAllResources', 'loggedIn', 'currentPage'));
 	}
 
 }

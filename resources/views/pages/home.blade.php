@@ -42,18 +42,10 @@
             </div>
 
             @if(1 != $cookieLoadAll)
-                <i class="fa fa-btn fa-plus load-all" onclick="loadAllResources();" title="Show more works"></i>
+                <img class="load-all" src="{{config('app.base_url')}}img/nav/plus.png" title="" alt="Show more works" onclick="loadAllResources();" />
             @else
-                <i class="fa fa-btn fa-minus load-all" onclick="loadFewResources();" title="Show fewer works"></i>
+                <img class="load-all" src="{{config('app.base_url')}}img/nav/minus.png" title="" alt="Show fewer works" onclick="loadFewResources();" />
             @endif
-        </div>
-    @endif
-
-    @if($logosText)
-        <div id="about-row-container" class="row about-row-container" style="padding:0;">
-
-            {!! $logosText !!}
-
         </div>
     @endif
 

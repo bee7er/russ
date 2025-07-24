@@ -20218,10 +20218,10 @@ body {
 
 .header-block, .sub-header-block {
   padding: 0 4px 0 4px;
-  margin: 0 auto 14px auto;
+  margin: 0 auto 4px auto;
   color: #fff;
   font-size: 2.2em;
-  font-weight: 700 !important;
+  font-weight: 500 !important;
   text-align: center;
 }
 
@@ -20233,15 +20233,25 @@ body {
   text-align: left;
   float: left;
   cursor: pointer;
+  width: 30%;
 }
 
 .header-menu-right {
   text-align: right;
   float: right;
+  width: 70%;
+  margin: 0;
+  padding: 0;
 }
 
 .filter-label {
   padding-right: 25px;
+}
+
+.filter-block {
+  font-size: 0.7em;
+  width: 100%;
+  margin: 15px -14px 0 0;
 }
 
 @media (min-width: 1200px) {
@@ -20306,6 +20316,10 @@ body {
 .row-container,
 .title-row-container,
 .about-row-container,
+.contact-row-container,
+.tutorials-row-container,
+.merch-row-container,
+.fish-tank-row-container,
 .footer-row-container,
 .template-row-container,
 .template-credits-row-container {
@@ -20407,6 +20421,13 @@ body {
     text-align: left;
 }
 
+.tutorials-row-container {
+  margin-top: 0;
+  padding: 0;
+  width: 0;
+  text-align: left;
+}
+
 .video-frame {
   background-color: #000;
   padding: 0;
@@ -20418,6 +20439,12 @@ body {
 .resource-container {
   margin-top: 0;
   padding: 20px;
+}
+
+.tutorials-adjust-div {
+  width: fit-content;
+  /* To adjust the height as well */
+  height: fit-content;
 }
 
 .work-image,
@@ -20550,7 +20577,6 @@ body {
 }
 
 .load-all {
-  font-size: 48px;
   margin-top: 30px;
 }
 
@@ -20652,6 +20678,19 @@ p a:hover {
   border: none;
   padding: 10px 20px;
   cursor: pointer;
+}
+
+.contact-email {
+  color: #fff;
+  border: none;
+  font-size: 0.7em;
+  font-weight: 500 !important;
+}
+
+.contact-social {
+  border: none;
+  width: 38px;
+  margin-right: 5px;
 }
 
 /* Media queries */

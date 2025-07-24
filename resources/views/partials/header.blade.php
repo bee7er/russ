@@ -8,21 +8,23 @@ if (!isset($currentPage)) {
 <div class="row logo-menu-container">
     <div class="hidden-xs hidden-sm col-md-12 col-lg-12 header-block">
         <div class="header-menu-left"><span onclick="gotoPage
-        ('home');">Russ Etheridge</span></div>
+        ('home');">Russ Etheridge</span>
+            <div class="contact-email">contact@russetheridge.com</div>
+            <div class=""><img class="contact-social" src="{{config('app.base_url')}}img/social/instagram.png" title="" alt="" /><img class="contact-social" src="{{config('app.base_url')}}img/social/linkedin.png" title="" alt="" /><img class="contact-social" src="{{config('app.base_url')}}img/social/twitter.png" title="" alt="" /><img class="contact-social" src="{{config('app.base_url')}}img/social/youtube.png" title="" alt="" /></div>
+        </div>
         <div class="header-menu-right"><span id="showreelId" onclick="gotoPage('showreel');"
                                                                            onmouseover="$(this).addClass('white-link-hover');"
                                                                            onmouseout="$(this).removeClass('white-link-hover')">showreel</span><img class="square" src="{{config('app.base_url')}}img/square.png" /><span id="homeId" class="" onclick="filterByCategory('all');"
                                                                            onmouseover="$(this).addClass('white-link-hover');"
-                                                                           onmouseout="$(this).removeClass('white-link-hover')">work</span><img class="square" src="{{config('app.base_url')}}img/square.png" /><span id="tutorialsId" onclick="gotoPage('tutorials');" onmouseover="$(this).addClass('white-link-hover')" onmouseout="$(this).removeClass('white-link-hover')">tutorials</span><img class="square" src="{{config('app.base_url')}}img/square.png" /><span id="aboutId" onclick="gotoPage('about');" onmouseover="$(this).addClass('white-link-hover')" onmouseout="$(this).removeClass('white-link-hover')">about</span></div>
+                                                                           onmouseout="$(this).removeClass('white-link-hover')">work</span><img class="square" src="{{config('app.base_url')}}img/square.png" /><span id="tutorialsId" onclick="gotoPage('tutorials');" onmouseover="$(this).addClass('white-link-hover')" onmouseout="$(this).removeClass('white-link-hover')">tutorials</span><img class="square" src="{{config('app.base_url')}}img/square.png" /><span id="aboutId" onclick="gotoPage('about');" onmouseover="$(this).addClass('white-link-hover')" onmouseout="$(this).removeClass('white-link-hover')">about</span>
+            <div class="hidden-xs hidden-sm col-md-12 col-lg-12">
+                <div class="header-menu-right filter-block"><span class="filter-label">Filter:</span><span id="all" onclick="filterByCategory('all');"
+                                                                                              onmouseover="$(this).addClass('white-link-hover');"
+                                                                                              onmouseout="$(this).removeClass('white-link-hover')">all</span><img class="square" src="{{config('app.base_url')}}img/square.png" /><span id="animator" onclick="filterByCategory('animator');" onmouseover="$(this).addClass('white-link-hover')" onmouseout="$(this).removeClass('white-link-hover')">animator</span><img class="square" src="{{config('app.base_url')}}img/square.png" /><span id="director" onclick="filterByCategory('director');" onmouseover="$(this).addClass('white-link-hover')" onmouseout="$(this).removeClass('white-link-hover')">director</span><img class="square" src="{{config('app.base_url')}}img/square.png" /><span  id="personal" onclick="filterByCategory('personal');" onmouseover="$(this).addClass('white-link-hover')" onmouseout="$(this).removeClass('white-link-hover')">personal</span><img class="square" src="{{config('app.base_url')}}img/square.png" /><span id="commercial" onclick="filterByCategory('commercial');" onmouseover="$(this).addClass('white-link-hover')" onmouseout="$(this).removeClass('white-link-hover')">commercial</span></div>
+            </div></div>
     </div>
-    <div class="hidden-xs hidden-sm col-md-12 col-lg-12 sub-header-block">
-        <div class="header-menu-right"><span class="filter-label">Filter:</span><span id="all" onclick="filterByCategory('all');"
-                                                                           onmouseover="$(this).addClass('white-link-hover');"
-                                                                           onmouseout="$(this).removeClass('white-link-hover')">all</span><img class="square" src="{{config('app.base_url')}}img/square.png" /><span id="animator" onclick="filterByCategory('animator');" onmouseover="$(this).addClass('white-link-hover')" onmouseout="$(this).removeClass('white-link-hover')">animator</span><img class="square" src="{{config('app.base_url')}}img/square.png" /><span id="director" onclick="filterByCategory('director');" onmouseover="$(this).addClass('white-link-hover')" onmouseout="$(this).removeClass('white-link-hover')">director</span><img class="square" src="{{config('app.base_url')}}img/square.png" /><span  id="personal" onclick="filterByCategory('personal');" onmouseover="$(this).addClass('white-link-hover')"
-                                                                 onmouseout="$(this).removeClass('white-link-hover')">personal</span><img class="square" src="{{config('app.base_url')}}img/square.png" /><span id="commercial" onclick="filterByCategory('commercial');" onmouseover="$(this).addClass('white-link-hover')"
-                                                                 onmouseout="$(this).removeClass('white-link-hover')">commercial</span>
-        </div>
-    </div>
+
+
     <div class="hidden-xs col-sm-12 hidden-md hidden-lg header-block">
         <span id="showreelId" onclick="gotoPage('showreel');" onmouseover="$(this).addClass('white-link-hover');"
               onmouseout="$(this).removeClass('white-link-hover')">showreel</span>
