@@ -12,6 +12,8 @@
 
         {!! $video->rendered !!}
 
+        <div style="text-align: center;"><img class="load-all" src="{{config('app.base_url')}}img/nav/home.png" title="" alt="" onclick="gotoPage('home');" /></div>
+
     @endif
 
 @endsection

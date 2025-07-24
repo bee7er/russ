@@ -15,7 +15,7 @@ use Illuminate\Support\Facades\Cookie;
  */
 class HomeController extends Controller
 {
-	const INITIAL_LOAD = 7;
+	const INITIAL_LOAD = 10;
 
 	/**
 	 * The Guard implementation.
