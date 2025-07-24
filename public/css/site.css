@@ -20323,7 +20323,7 @@ body {
 .footer-row-container,
 .template-row-container,
 .template-credits-row-container {
-  margin: 20px auto 40px auto;
+  margin: 20px auto 10px auto;
   border: 10px solid black;
   padding: 18px;
   background-color: #002DFF;
@@ -20577,7 +20577,7 @@ body {
 }
 
 .load-all {
-  margin-top: 30px;
+  margin-top: 5px;
 }
 
 .load-all:hover {
@@ -20680,7 +20680,7 @@ p a:hover {
   cursor: pointer;
 }
 
-.contact-email {
+.contact-email a {
   color: #fff;
   border: none;
   font-size: 0.7em;
