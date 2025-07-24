@@ -18,7 +18,7 @@
         <meta property="og:description" content="Russ Etheridge is a freelance Animator, Director and Designer. Please get in touch for more info and availability!">
 
 		<link href="{{ asset('css/site.css?v13') }}" rel="stylesheet">
-        <script src="{{ asset('js/site.js?v7') }}"></script>
+        <script src="{{ asset('js/site.js?v8') }}"></script>
 
     @yield('styles')
     <!-- HTML5 shim and Respond.js for IE8 support of HTML5 elements and media queries -->
