@@ -17,7 +17,6 @@ Route::get('home', 'HomeController@index');
 Route::get('expressions', 'PagesController@expressions');
 Route::get('tutorials', 'PagesController@tutorials');
 Route::get('about', 'PagesController@about');
-Route::get('contact', 'PagesController@contact');
 // NB Using the following as an alias to video controller
 Route::get('/{name}', 'VideoController@show');
 Route::get('video/{name}', 'VideoController@show');

@@ -13,8 +13,7 @@ if (!isset($currentPage)) {
                                                                            onmouseover="$(this).addClass('white-link-hover');"
                                                                            onmouseout="$(this).removeClass('white-link-hover')">showreel</span><img class="square" src="{{config('app.base_url')}}img/square.png" /><span id="homeId" class="" onclick="filterByCategory('all');"
                                                                            onmouseover="$(this).addClass('white-link-hover');"
-                                                                           onmouseout="$(this).removeClass('white-link-hover')">work</span><img class="square" src="{{config('app.base_url')}}img/square.png" /><span id="tutorialsId" onclick="gotoPage('tutorials');" onmouseover="$(this).addClass('white-link-hover')" onmouseout="$(this).removeClass('white-link-hover')">tutorials</span><img class="square" src="{{config('app.base_url')}}img/square.png" /><span id="aboutId" onclick="gotoPage('about');" onmouseover="$(this).addClass('white-link-hover')" onmouseout="$(this).removeClass('white-link-hover')">about</span><img class="square" src="{{config('app.base_url')}}img/square.png" /><span id="contactId" onclick="gotoPage('contact');" onmouseover="$(this).addClass('white-link-hover')"
-                                                                 onmouseout="$(this).removeClass('white-link-hover')">contact</span></div>
+                                                                           onmouseout="$(this).removeClass('white-link-hover')">work</span><img class="square" src="{{config('app.base_url')}}img/square.png" /><span id="tutorialsId" onclick="gotoPage('tutorials');" onmouseover="$(this).addClass('white-link-hover')" onmouseout="$(this).removeClass('white-link-hover')">tutorials</span><img class="square" src="{{config('app.base_url')}}img/square.png" /><span id="aboutId" onclick="gotoPage('about');" onmouseover="$(this).addClass('white-link-hover')" onmouseout="$(this).removeClass('white-link-hover')">about</span></div>
     </div>
     <div class="hidden-xs hidden-sm col-md-12 col-lg-12 sub-header-block">
         <div class="header-menu-right"><span class="filter-label">Filter:</span><span id="all" onclick="filterByCategory('all');"
@@ -36,9 +35,6 @@ if (!isset($currentPage)) {
         <img class="square" src="{{config('app.base_url')}}img/square.png" />
         <span id="aboutId" onclick="gotoPage('about');" onmouseover="$(this).addClass('white-link-hover')"
               onmouseout="$(this).removeClass('white-link-hover')">about</span>
-        <img class="square" src="{{config('app.base_url')}}img/square.png" />
-        <span id="contactId" onclick="gotoPage('contact');" onmouseover="$(this).addClass('white-link-hover')"
-              onmouseout="$(this).removeClass('white-link-hover')">contact</span>
     </div>
     <div class="hidden-xs col-sm-12 hidden-md hidden-lg sub-header-block"><span class="filter-label">Filter:</span>
         <span id="all" onclick="filterByCategory('all');" onmouseover="$(this).addClass('white-link-hover');"
@@ -81,17 +77,6 @@ if (!isset($currentPage)) {
                 <td class="logo-menu-table-right">
                     <span id="aboutId" class="white-link" onclick="gotoPage('about');" onmouseover="$(this).addClass('white-link-hover')"
                           onmouseout="$(this).removeClass('white-link-hover')">about</span>
-                </td>
-            </tr>
-            <tr>
-                <td class="logo-menu-table-right">
-                    <span id="contactId" class="white-link" onclick="gotoPage('contact');" onmouseover="$(this).addClass('white-link-hover')"
-                          onmouseout="$(this).removeClass('white-link-hover')
-                                                    ">contact</span>
-                </td>
-                <td class="square-vertical logo-menu-table-center">&nbsp;</td>
-                <td class="logo-menu-table-left">
-                    &nbsp;
                 </td>
             </tr>
             </tbody>
@@ -148,7 +133,6 @@ if (!isset($currentPage)) {
                     aid == "showreel"
                     || aid == "tutorials"
                     || aid == "about"
-                    || aid == "contact"
             ) {
                 document.location = ("{{config('app.base_url')}}" + aid);
             } else {

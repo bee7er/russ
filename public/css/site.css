@@ -20306,10 +20306,6 @@ body {
 .row-container,
 .title-row-container,
 .about-row-container,
-.contact-row-container,
-.news-row-container,
-.merch-row-container,
-.fish-tank-row-container,
 .footer-row-container,
 .template-row-container,
 .template-credits-row-container {
@@ -20411,39 +20407,6 @@ body {
     text-align: left;
 }
 
-.contact-row-container {
-  margin-top: 0;
-  margin-bottom: 0;
-  padding: 20px;
-  width: 50%;
-  text-align: center;
-}
-
-.news-row-container {
-  margin-top: 0;
-  padding: 0;
-  width: 0;
-  text-align: left;
-}
-
-.news-adjust-div {
-  width: fit-content;
-  /* To adjust the height as well */
-  height: fit-content;
-}
-
-.news-adjust-ul {
-  margin: 28px 40px 28px 52px !important;
-  padding: 0;
-}
-
-.merch-row-container {
-  margin-top: 0;
-  padding: 20px;
-  width: 30%;
-  text-align: center;
-}
-
 .video-frame {
   background-color: #000;
   padding: 0;
@@ -20539,7 +20502,6 @@ body {
 
 .panel-title,
 .about-panel-title,
-.contact-panel-title,
 .tutorial-panel-title,
 .template-title,
 .template-details-title,
@@ -20559,7 +20521,7 @@ body {
   font-size: 64px;
 }
 
-.about-panel-title, .contact-panel-title, .tutorial-panel-title {
+.about-panel-title, .tutorial-panel-title {
   margin: 20px 0;
 }
 
@@ -20611,12 +20573,6 @@ body {
 
 .about-text {
   padding: 20px;
-}
-
-.news-text {
-}
-
-.contact-text {
 }
 
 .headshot {

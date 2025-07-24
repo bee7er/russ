@@ -11,7 +11,6 @@ use Illuminate\Http\Request;
 class PagesController extends Controller
 {
 	const ABOUT_TEMPLATE = '*About';
-	const CONTACT_TEMPLATE = '*Contact';
 
 	/**
 	 * The Guard implementation.
@@ -93,27 +92,6 @@ class PagesController extends Controller
 		$currentPage = 'about';
 
 		return view('pages.about', compact('aboutText', 'loggedIn', 'currentPage'));
-	}
-
-	/**
-	 * Show the Contact page to the user.
-	 *
-	 * @param Request $request
-	 * @return Response
-	 */
-	public function contact(Request $request)
-	{
-		$loggedIn = false;
-		if ($this->auth->check()) {
-			$loggedIn = true;
-		}
-
-		$contact = Template::where([ 'name' => self::CONTACT_TEMPLATE, 'deleted_at' => null ])->get()->first();
-		$contactText = $contact ? $contact->container: null;
-
-		$currentPage = 'contact';
-
-		return view('pages.contact', compact('contactText', 'loggedIn', 'currentPage'));
 	}
 
 }
