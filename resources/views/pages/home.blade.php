@@ -60,23 +60,6 @@
         </div>
     @endif
 
-    @if(count($notices)>0)
-        <div id="news" class="panel-title">news</div>
-            <div class="row news-row-container news-adjust-div" style="max-width: 70%;">
-                <div class="col-xs-12 col-sm-12 col-md-12 col-lg-12 news-text">
-                    <ul class="news-adjust-ul">
-                        @foreach($notices as $notice)
-                            @if($notice->url)
-                                <li><a href="{!! url($notice->url) !!}" class="">{!! $notice->notice !!}</a></li>
-                            @else
-                                <li>{!! $notice->notice !!}</li>
-                            @endif
-                        @endforeach
-                    </ul>
-                </div>
-            </div>
-    @endif
-
     @if($logosText)
         <div id="about-row-container" class="row about-row-container" style="padding:0;">
 

@@ -69,7 +69,9 @@ class PagesController extends Controller
 			->orderBy("tutorials.seq")
 			->limit(999)->get();
 
-		return view('pages.tutorials', compact('tutorials', 'loggedIn'));
+		$currentPage = 'tutorials';
+
+		return view('pages.tutorials', compact('tutorials', 'loggedIn', 'currentPage'));
 	}
 
 	/**
@@ -88,7 +90,9 @@ class PagesController extends Controller
 		$about = Template::where([ 'name' => self::ABOUT_TEMPLATE, 'deleted_at' => null ])->get()->first();
 		$aboutText = $about ? $about->container: null;
 
-		return view('pages.about', compact('aboutText', 'loggedIn'));
+		$currentPage = 'about';
+
+		return view('pages.about', compact('aboutText', 'loggedIn', 'currentPage'));
 	}
 
 	/**
@@ -107,7 +111,9 @@ class PagesController extends Controller
 		$contact = Template::where([ 'name' => self::CONTACT_TEMPLATE, 'deleted_at' => null ])->get()->first();
 		$contactText = $contact ? $contact->container: null;
 
-		return view('pages.contact', compact('contactText', 'loggedIn'));
+		$currentPage = 'contact';
+
+		return view('pages.contact', compact('contactText', 'loggedIn', 'currentPage'));
 	}
 
 }

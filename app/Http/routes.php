@@ -56,12 +56,6 @@ Route::group(['prefix' => 'admin', 'middleware' => 'admin'], function() {
     Route::get('resource/{resource}/edit', 'Admin\ResourceController@edit');
     Route::get('resource/{resource}/delete', 'Admin\ResourceController@delete');
     Route::resource('resource', 'Admin\ResourceController');
-    # Notice
-    Route::get('notice/data', 'Admin\NoticeController@data');
-    Route::get('notice/{notice}/show', 'Admin\NoticeController@show');
-    Route::get('notice/{notice}/edit', 'Admin\NoticeController@edit');
-    Route::get('notice/{notice}/delete', 'Admin\NoticeController@delete');
-    Route::resource('notice', 'Admin\NoticeController');
     # Tutorial
     Route::get('tutorial/data', 'Admin\TutorialController@data');
     Route::get('tutorial/{tutorial}/show', 'Admin\TutorialController@show');

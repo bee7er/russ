@@ -1,16 +1,20 @@
-
+<?php
+if (!isset($currentPage)) {
+    $currentPage = 'login';
+}
+?>
 <div id="top">&nbsp;</div>
 
 <div class="row logo-menu-container">
     <div class="hidden-xs hidden-sm col-md-12 col-lg-12 header-block">
         <div class="header-menu-left"><span onclick="gotoPage
         ('home');">Russ Etheridge</span></div>
-        <div class="header-menu-right"><span onclick="gotoPage('showreel');"
+        <div class="header-menu-right"><span id="showreelId" onclick="gotoPage('showreel');"
                                                                            onmouseover="$(this).addClass('white-link-hover');"
-                                                                           onmouseout="$(this).removeClass('white-link-hover')">showreel</span><img class="square" src="{{config('app.base_url')}}img/square.png" /><span onclick="filterByCategory('all');"
+                                                                           onmouseout="$(this).removeClass('white-link-hover')">showreel</span><img class="square" src="{{config('app.base_url')}}img/square.png" /><span id="homeId" class="" onclick="filterByCategory('all');"
                                                                            onmouseover="$(this).addClass('white-link-hover');"
-                                                                           onmouseout="$(this).removeClass('white-link-hover')">work</span><img class="square" src="{{config('app.base_url')}}img/square.png" /><span onclick="gotoPage('tutorials');" onmouseover="$(this).addClass('white-link-hover')" onmouseout="$(this).removeClass('white-link-hover')">tutorials</span><img class="square" src="{{config('app.base_url')}}img/square.png" /><span onclick="gotoPage('about');" onmouseover="$(this).addClass('white-link-hover')" onmouseout="$(this).removeClass('white-link-hover')">about</span><img class="square" src="{{config('app.base_url')}}img/square.png" /><span  onclick="gotoPage('contact');" onmouseover="$(this).addClass('white-link-hover')"
-                                                                 onmouseout="$(this).removeClass('white-link-hover')">contact</span>@if(isset($notices) && count($notices)>0)<img class="square" src="{{config('app.base_url')}}img/square.png" /><span onclick="gotoPage('news');" onmouseover="$(this).addClass('white-link-hover')" onmouseout="$(this).removeClass('white-link-hover')">news</span>@endif</div>
+                                                                           onmouseout="$(this).removeClass('white-link-hover')">work</span><img class="square" src="{{config('app.base_url')}}img/square.png" /><span id="tutorialsId" onclick="gotoPage('tutorials');" onmouseover="$(this).addClass('white-link-hover')" onmouseout="$(this).removeClass('white-link-hover')">tutorials</span><img class="square" src="{{config('app.base_url')}}img/square.png" /><span id="aboutId" onclick="gotoPage('about');" onmouseover="$(this).addClass('white-link-hover')" onmouseout="$(this).removeClass('white-link-hover')">about</span><img class="square" src="{{config('app.base_url')}}img/square.png" /><span id="contactId" onclick="gotoPage('contact');" onmouseover="$(this).addClass('white-link-hover')"
+                                                                 onmouseout="$(this).removeClass('white-link-hover')">contact</span></div>
     </div>
     <div class="hidden-xs hidden-sm col-md-12 col-lg-12 sub-header-block">
         <div class="header-menu-right"><span class="filter-label">Filter:</span><span id="all" onclick="filterByCategory('all');"
@@ -21,25 +25,20 @@
         </div>
     </div>
     <div class="hidden-xs col-sm-12 hidden-md hidden-lg header-block">
-        <span onclick="gotoPage('showreel');" onmouseover="$(this).addClass('white-link-hover');"
+        <span id="showreelId" onclick="gotoPage('showreel');" onmouseover="$(this).addClass('white-link-hover');"
               onmouseout="$(this).removeClass('white-link-hover')">showreel</span>
         <img class="square" src="{{config('app.base_url')}}img/square.png" />
-        <span onclick="filterByCategory('all');" onmouseover="$(this).addClass('white-link-hover');"
+        <span id="homeId" onclick="filterByCategory('all');" onmouseover="$(this).addClass('white-link-hover');"
               onmouseout="$(this).removeClass('white-link-hover')">work</span>
         <img class="square" src="{{config('app.base_url')}}img/square.png" />
-        <span onclick="gotoPage('tutorials');" onmouseover="$(this).addClass('white-link-hover')"
+        <span id="tutorialsId" onclick="gotoPage('tutorials');" onmouseover="$(this).addClass('white-link-hover')"
               onmouseout="$(this).removeClass('white-link-hover')">tutorials</span>
         <img class="square" src="{{config('app.base_url')}}img/square.png" />
-        <span onclick="gotoPage('about');" onmouseover="$(this).addClass('white-link-hover')"
+        <span id="aboutId" onclick="gotoPage('about');" onmouseover="$(this).addClass('white-link-hover')"
               onmouseout="$(this).removeClass('white-link-hover')">about</span>
         <img class="square" src="{{config('app.base_url')}}img/square.png" />
-        <span onclick="gotoPage('contact');" onmouseover="$(this).addClass('white-link-hover')"
+        <span id="contactId" onclick="gotoPage('contact');" onmouseover="$(this).addClass('white-link-hover')"
               onmouseout="$(this).removeClass('white-link-hover')">contact</span>
-        @if(isset($notices) && count($notices)>0)
-            <img class="square" src="{{config('app.base_url')}}img/square.png" />
-            <span onclick="gotoPage('news');" onmouseover="$(this).addClass('white-link-hover')"
-              onmouseout="$(this).removeClass('white-link-hover')">news</span>
-            @endif
     </div>
     <div class="hidden-xs col-sm-12 hidden-md hidden-lg sub-header-block"><span class="filter-label">Filter:</span>
         <span id="all" onclick="filterByCategory('all');" onmouseover="$(this).addClass('white-link-hover');"
@@ -62,31 +61,31 @@
             <tbody>
             <tr>
                 <td class="logo-menu-table-left">
-                    <span class="white-link" onclick="gotoPage('showreel');" onmouseover="$(this).addClass('white-link-hover');"
+                    <span id="showreelId" class="white-link" onclick="gotoPage('showreel');" onmouseover="$(this).addClass('white-link-hover');"
                           onmouseout="$(this).removeClass('white-link-hover')">showreel</span>
                 </td>
                 <td class="square-vertical logo-menu-table-center"><img src="{{config('app.base_url')}}img/square.png"
                     /></td>
                 <td class="logo-menu-table-right">
-                    <span class="white-link" onclick="filterByCategory('all');" onmouseover="$(this).addClass('white-link-hover');"
+                    <span id="homeId" class="white-link" onclick="filterByCategory('all');" onmouseover="$(this).addClass('white-link-hover');"
                           onmouseout="$(this).removeClass('white-link-hover')">work</span>
                 </td>
             </tr>
             <tr>
                 <td class="logo-menu-table-left">
-                    <span class="white-link" onclick="gotoPage('tutorials');" onmouseover="$(this).addClass('white-link-hover')"
+                    <span id="tutorialsId" class="white-link" onclick="gotoPage('tutorials');" onmouseover="$(this).addClass('white-link-hover')"
                           onmouseout="$(this).removeClass('white-link-hover')">tutorials</span>
                 </td>
                 <td class="square-vertical logo-menu-table-center"><img src="{{config('app.base_url')}}img/square.png"
                     /></td>
                 <td class="logo-menu-table-right">
-                    <span class="white-link" onclick="gotoPage('about');" onmouseover="$(this).addClass('white-link-hover')"
+                    <span id="aboutId" class="white-link" onclick="gotoPage('about');" onmouseover="$(this).addClass('white-link-hover')"
                           onmouseout="$(this).removeClass('white-link-hover')">about</span>
                 </td>
             </tr>
             <tr>
                 <td class="logo-menu-table-right">
-                    <span class="white-link" onclick="gotoPage('contact');" onmouseover="$(this).addClass('white-link-hover')"
+                    <span id="contactId" class="white-link" onclick="gotoPage('contact');" onmouseover="$(this).addClass('white-link-hover')"
                           onmouseout="$(this).removeClass('white-link-hover')
                                                     ">contact</span>
                 </td>
@@ -95,19 +94,6 @@
                     &nbsp;
                 </td>
             </tr>
-            @if(isset($notices) && count($notices)>0)
-            <tr>
-                <td class="logo-menu-table-right">
-                    <span class="white-link" onclick="gotoPage('news');" onmouseover="$(this).addClass
-                    ('white-link-hover')"
-                          onmouseout="$(this).removeClass('white-link-hover')">news</span>
-                </td>
-                <td class="square-vertical logo-menu-table-center"><img src="{{config('app.base_url')}}img/square.png" /></td>
-                <td class="logo-menu-table-left">
-                    &nbsp;
-                </td>
-            </tr>
-                @endif
             </tbody>
         </table>
     </div>
@@ -199,6 +185,12 @@
             const category = urlParams.get('category');
             if (undefined !== category) {
                 $(document.getElementById(category)).addClass('active-filter');
+            }
+
+            // Check which page we are on, if so set the underline to indicate which
+            let thisPage = window.location.pathname.replace('/', "");
+            if (thisPage =='{{$currentPage}}') {
+                $(document.getElementById(thisPage + 'Id')).addClass('active-filter');
             }
         });
 

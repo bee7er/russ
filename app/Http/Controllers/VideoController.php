@@ -23,6 +23,8 @@ class VideoController extends Controller
             $videoTitle = "None";
         }
 
-        return view('video.view_video',compact('video', 'error', 'videoTitle'));
+        $currentPage = $name;
+
+        return view('video.view_video',compact('video', 'error', 'videoTitle', 'currentPage'));
 	}
 }

@@ -4,7 +4,6 @@ namespace App\Http\Controllers;
 
 use Illuminate\Auth\Guard;
 
-use App\Notice;
 use App\Resource;
 use App\Template;
 use Illuminate\Http\Request;
@@ -141,18 +140,6 @@ class HomeController extends Controller
 			}
 		}
 
-		$notices = Notice::select(
-			array(
-				'notices.id',
-				'notices.seq',
-				'notices.notice',
-				'notices.url',
-				'notices.deleted_at'
-			)
-		)
-			->orderBy("notices.seq")
-			->limit(999)->get();
-
 		$logos = Template::where([ 'name' => self::LOGOS_TEMPLATE, 'deleted_at' => null ])->get()->first();
 		$logosText = $logos ? $logos->container: null;
 
@@ -161,8 +148,10 @@ class HomeController extends Controller
 			$loggedIn = true;
 		}
 
+		$currentPage = 'home';
+
 		return view('pages.home', compact('resources', 'cookieLoadAll',
-			'titleResource', 'isShowAllResources', 'logosText', 'notices', 'loggedIn'));
+			'titleResource', 'isShowAllResources', 'logosText', 'loggedIn', 'currentPage'));
 	}
 
 }
