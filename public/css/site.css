@@ -20609,14 +20609,6 @@ body {
   margin: 8px;
 }
 
-.hidden-preload {
-  height: 1px;
-  left: -20000px;
-  position: absolute;
-  top: -20000px;
-  width: 1px;
-}
-
 .about-text {
   padding: 20px;
 }

@@ -188,7 +188,8 @@ if (!isset($currentPage)) {
             }
 
             // Check which page we are on, if so set the underline to indicate which
-            let thisPage = window.location.pathname.replace('/', "");
+            let thisPage = window.location.pathname.replace('/public', "").replace('/', "");
+            console.log(thisPage);
             if (thisPage =='{{$currentPage}}') {
                 $(document.getElementById(thisPage + 'Id')).addClass('active-filter');
             }
