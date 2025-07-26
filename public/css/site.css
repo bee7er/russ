@@ -20573,11 +20573,11 @@ body {
   cursor: pointer;
   color: #fff;
   font-weight: bold;
-  font-size: 24px;
 }
 
 .load-all {
   margin-top: 5px;
+  transform: scale(0.75);
 }
 
 .load-all:hover {
@@ -20689,8 +20689,8 @@ p a:hover {
 
 .contact-social {
   border: none;
-  width: 38px;
-  margin-right: 5px;
+  width: 32px;
+  margin-right: 10px;
 }
 
 /* Media queries */
