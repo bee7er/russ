@@ -20685,6 +20685,7 @@ p a:hover {
   border: none;
   font-size: 0.7em;
   font-weight: 500 !important;
+  display: block;
 }
 
 .contact-social {
