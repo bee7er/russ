@@ -25,6 +25,8 @@ if (!isset($currentPage)) {
 
 
     <div class="hidden-xs col-sm-12 hidden-md hidden-lg header-block">
+        <div class="contact-social-medium"><div class="contact-email"><a href="mailto:contact@russetheridge.com">contact@russetheridge.com</a></div>
+            <div class=""><a target="_blank" href="https://www.instagram.com/russ_ether/"><img class="contact-social" src="{{config('app.base_url')}}img/social/instagram.png" title="Share on Instagram" alt="" /></a><a target="_blank" href="https://www.linkedin.com/in/russether"><img class="contact-social" src="{{config('app.base_url')}}img/social/linkedin.png" title="Share on linkedin" alt="" /></a><a target="_blank" href="https://twitter.com/russ_ether"><img class="contact-social" src="{{config('app.base_url')}}img/social/twitter.png" title="Share on twitter" alt="" /></a><a target="_blank" href="https://youtube.com/@russ_ether"><img class="contact-social" src="{{config('app.base_url')}}img/social/youtube.png" title="" alt="Check out my Channel" /></a></div></div>
         <span id="showreelId" onclick="gotoPage('showreel');" onmouseover="$(this).addClass('white-link-hover');"
               onmouseout="$(this).removeClass('white-link-hover')">showreel</span>
         <img class="square" src="{{config('app.base_url')}}img/square.png" />
@@ -56,6 +58,12 @@ if (!isset($currentPage)) {
     <div class="col-xs-12 hidden-sm hidden-md hidden-lg header-block">
         <table class="logo-menu-table">
             <tbody>
+            <tr>
+                <td class="contact-social-small" colspan="3">
+                    <div class="contact-social-medium"><div class="contact-email"><a href="mailto:contact@russetheridge.com">contact@russetheridge.com</a></div>
+                        <div class=""><a target="_blank" href="https://www.instagram.com/russ_ether/"><img class="contact-social" src="{{config('app.base_url')}}img/social/instagram.png" title="Share on Instagram" alt="" /></a><a target="_blank" href="https://www.linkedin.com/in/russether"><img class="contact-social" src="{{config('app.base_url')}}img/social/linkedin.png" title="Share on linkedin" alt="" /></a><a target="_blank" href="https://twitter.com/russ_ether"><img class="contact-social" src="{{config('app.base_url')}}img/social/twitter.png" title="Share on twitter" alt="" /></a><a target="_blank" href="https://youtube.com/@russ_ether"><img class="contact-social" src="{{config('app.base_url')}}img/social/youtube.png" title="" alt="Check out my Channel" /></a></div></div>
+                </td>
+            </tr>
             <tr>
                 <td class="logo-menu-table-left">
                     <span id="showreelId" class="white-link" onclick="gotoPage('showreel');" onmouseover="$(this).addClass('white-link-hover');"

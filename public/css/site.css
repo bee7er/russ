@@ -20694,6 +20694,18 @@ p a:hover {
   margin-right: 10px;
 }
 
+.contact-social-medium {
+  transform: scale(0.75);
+  text-align: left;
+}
+
+.contact-social-small {
+  text-align: left;
+  padding: 0;
+  margin: 0;
+  float: left;
+}
+
 /* Media queries */
 
 @media (max-width: 1200px) {
