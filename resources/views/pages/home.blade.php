@@ -42,9 +42,9 @@
             </div>
 
             @if(1 != $cookieLoadAll)
-                <img class="load-all" src="{{config('app.base_url')}}img/nav/plus.png" title="" alt="Show more works" onclick="loadAllResources();" />
+                <img class="load-all" src="{{config('app.base_url')}}img/nav/plus.png" title="Show more works" onclick="loadAllResources();" />
             @else
-                <img class="load-all" src="{{config('app.base_url')}}img/nav/minus.png" title="" alt="Show fewer works" onclick="loadFewResources();" />
+                <img class="load-all" src="{{config('app.base_url')}}img/nav/minus.png" title="Show fewer works" onclick="loadFewResources();" />
             @endif
         </div>
     @endif
