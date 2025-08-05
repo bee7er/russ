@@ -20361,7 +20361,7 @@ body {
 .logo-menu-table-left,
 .logo-menu-table-center,
 .logo-menu-table-right {
-  padding-bottom: 0;
+  padding: 0 10px 0 0;
 }
 
 .logo-menu-table-left {
@@ -20683,7 +20683,7 @@ p a:hover {
 .contact-email a {
   color: #fff;
   border: none;
-  font-size: 0.7em;
+  font-size: 1.0em;
   font-weight: 500 !important;
   display: block;
 }
