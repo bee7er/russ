@@ -94,8 +94,7 @@ class HomeController extends Controller
 		// Once loaded the user can request more, in which case we load all that are available
 		$maxLoad = self::INITIAL_LOAD;		// Includes 2 at the top
 		if (!$isShowAllResources) {
-			// Reduce the number because we will not be displaying the title image
-			$maxLoad -= 1;
+			$maxLoad = 999;
 		}
 		$cookieLoadAll = $this->getCookie('cookieLoadAll', 0);
 		if (isset($cookieLoadAll) && 1 == $cookieLoadAll) {
