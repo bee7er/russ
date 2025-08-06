@@ -6,11 +6,12 @@
 @section('content')
 
     <div id="home">&nbsp;</div>
+    
+    <?php
+    $secondResource = $resources->shift();
+    ?>
 
     @if(null !== $titleResource && $isShowAllResources)
-        <?php
-        $secondResource = $resources->shift();
-        ?>
         <div class="row title-row-container">
             <div class="" onclick="document.location='{{url($titleResource->name)}}';">
                 <img id="{!! $titleResource->id !!}" class="title-work-image col-xs-12 col-sm-8 col-md-8 col-lg-8 col-xl-8" onmouseover="this.src='{!! $titleResource->titleThumbHover !!}'" onmouseout="this.src='{!! $titleResource->titleThumb !!}'" src="{!! $titleResource->titleThumb !!}" title="" alt="{!! $titleResource->name !!}">
