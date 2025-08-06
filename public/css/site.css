@@ -20457,8 +20457,8 @@ body {
 .details-work-image,
 .title-work-image {
   border: 5px solid #002DFF;
-  margin: 0;
   background-color: #000;
+  margin: 0;
   padding: 10px;
 }
 
@@ -20468,7 +20468,6 @@ body {
 }
 
 .title-work-image {
-  margin: 0;
 }
 
 .about-table {

@@ -15,7 +15,7 @@ use Illuminate\Support\Facades\Cookie;
  */
 class HomeController extends Controller
 {
-	const INITIAL_LOAD = 10;
+	const INITIAL_LOAD = 11;
 
 	/**
 	 * The Guard implementation.
@@ -112,7 +112,8 @@ class HomeController extends Controller
 					$resource->hoverActions = sprintf('onmouseover="this.src=\'%s\'" onmouseout="this.src=\'%s\'"',
 						$resource->thumbHover, $resource->thumb);
 				}
-				// Check if the thumb is in fact a video
+				// Check if the thumb is in fact a video.  These are animated on the home page and
+				// do not go to another page to be displayed.
 				$resource->video = '';
 				if (false !== strpos($resource->thumb, '.mp4')) {
 					$resource->video = $resource->thumb;
@@ -126,7 +127,10 @@ class HomeController extends Controller
 			}
 
 			// Make sure we have an even number of entries, which is a factor of 3
-			$count = $resources->count();
+			// Add an extra two because the title line is using two entries and displayed separately
+			$count = ($resources->count() + 2);
+
+			//dd($count);
 
 			$first = null;
 			$useImage = 0;
@@ -134,7 +138,7 @@ class HomeController extends Controller
 				$use = clone($resources->get($useImage));
 				$use['id'] = (9999 + $useImage);        // Dummy unique id
 				$resources = $resources->merge([$use]);
-				$count = $resources->count();
+				$count = ($resources->count() + 2);
 				$useImage++;
 			}
 		}
