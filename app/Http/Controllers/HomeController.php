@@ -43,14 +43,6 @@ class HomeController extends Controller
 	 */
 	public function index(Request $request)
 	{
-		// NB We initially load only a maximum of 6 resources
-		//// Once loaded the user can request more, in which case we load all that are available
-		$maxLoad = self::INITIAL_LOAD;
-		$cookieLoadAll = $this->getCookie('cookieLoadAll', 0);
-		if (isset($cookieLoadAll) && 1 == $cookieLoadAll) {
-			$maxLoad = 999;
-		}
-
 		$category = trim($request->input('category'));
 
 		$builder = Resource::select(
@@ -74,8 +66,7 @@ class HomeController extends Controller
 				'resources.deleted_at'
 			)
 		)
-			->orderBy("resources.seq")
-			->limit($maxLoad);
+			->orderBy("resources.seq");
 
 		// Ok, may not show all
 		$isShowAllResources = false;
@@ -99,7 +90,24 @@ class HomeController extends Controller
 				$builder->where("resources.includeInAll", "=", "1");
 		}
 
+		// NB We initially load only a limited number of resources
+		// Once loaded the user can request more, in which case we load all that are available
+		$maxLoad = self::INITIAL_LOAD;		// Includes 2 at the top
+		if (!$isShowAllResources) {
+			// Reduce the number because we will not be displaying the title image
+			$maxLoad -= 1;
+		}
+		$cookieLoadAll = $this->getCookie('cookieLoadAll', 0);
+		if (isset($cookieLoadAll) && 1 == $cookieLoadAll) {
+			$maxLoad = 999;
+		}
+
+		$builder->limit($maxLoad);
+
 		$resources = $builder->get();
+
+//		print_r($maxLoad);
+//		dd($resources);
 
 		if ($resources->count() > 0) {
 			// Grab the first entry, it is the title entry
@@ -127,8 +135,11 @@ class HomeController extends Controller
 			}
 
 			// Make sure we have an even number of entries, which is a factor of 3
-			// Add an extra two because the title line is using two entries and displayed separately
-			$count = ($resources->count() + 2);
+			$count = $resources->count();
+			if ($isShowAllResources) {
+				// Add two for the title images are taking up three spaces
+				$count += 2;
+			}
 
 			//dd($count);
 
@@ -138,7 +149,11 @@ class HomeController extends Controller
 				$use = clone($resources->get($useImage));
 				$use['id'] = (9999 + $useImage);        // Dummy unique id
 				$resources = $resources->merge([$use]);
-				$count = ($resources->count() + 2);
+				$count = $resources->count();
+				if ($isShowAllResources) {
+					// Add two for the title images are taking up three space
+					$count += 2;
+				}
 				$useImage++;
 			}
 		}

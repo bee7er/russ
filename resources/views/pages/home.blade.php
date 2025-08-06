@@ -6,9 +6,12 @@
 @section('content')
 
     <div id="home">&nbsp;</div>
-    
+
     <?php
-    $secondResource = $resources->shift();
+    $secondResource = null;
+    if($isShowAllResources) {
+        $secondResource = $resources->shift();
+    }
     ?>
 
     @if(null !== $titleResource && $isShowAllResources)
@@ -67,23 +70,25 @@
         {
         });
 
-        /**
-         * For some reason using the bootstrap column classes causes the title image
-         * to acquire an incorrect height.  Here we set the height equal to its next door neighbour.
-         * We must recalculate the height each time the screen is resized.
-         */
-        function handleResize() {
-            let f = document.getElementById('{{$secondResource->id}}');
-            let h = f.height;
-            let t = document.getElementById('{{$titleResource->id}}');
+        @if($isShowAllResources)
+            /**
+             * For some reason using the bootstrap column classes causes the title image
+             * to acquire an incorrect height.  Here we set the height equal to its next door neighbour.
+             * We must recalculate the height each time the screen is resized.
+             */
+            function handleResize() {
+                let f = document.getElementById('{{$secondResource->id}}');
+                let h = f.height;
+                let t = document.getElementById('{{$titleResource->id}}');
 
-            t.height = h + 30;
-//            console.log('h=' + h);
-//            console.log('3=' + t.height);
-        }
-        window.addEventListener('resize', handleResize);
+                t.height = h + 30;
+    //            console.log('h=' + h);
+    //            console.log('3=' + t.height);
+            }
+            window.addEventListener('resize', handleResize);
 
-        handleResize();
+            handleResize();
+        @endif
 
     </script>
 @endsection
