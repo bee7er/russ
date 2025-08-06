@@ -6,7 +6,6 @@
 
     <div id="about" class="about-panel-title">about</div>
     <div id="about-row-container" class="row about-row-container" style="padding:0;">
-        <div><img alt="" src="img/russ_headshot.jpg" class="headshot"></div>
 
         {!! $aboutText !!}
 

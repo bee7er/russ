@@ -20210,6 +20210,12 @@ body {
   padding: 0;
 }
 
+.row-about {
+  margin: 0;
+  padding: 0;
+  text-align: center;
+}
+
 .page-header {
   padding-bottom: 0;
   margin: 0;
@@ -20333,6 +20339,13 @@ body {
   font-size: 20px;
 }
 
+.about-row-container {
+  margin-top: 0;
+  padding: 0;
+  border: 0;
+  width: 80%;
+}
+
 .row-container,
 .title-row-container {
   margin-top: 8px;
@@ -20412,13 +20425,6 @@ body {
   margin-top: 300px;
   padding: 0;
   border: 0;
-}
-
-.about-row-container {
-    margin-top: 0;
-    padding: 0;
-    width: 45%;
-    text-align: left;
 }
 
 .tutorials-row-container {
@@ -20708,13 +20714,24 @@ p a:hover {
 
 /* Media queries */
 
+@media (max-width: 9000px) {
+  .about-row-container{
+    padding: 0;
+    width: 80%;
+  }
+}
+
 @media (max-width: 1200px) {
   .row-container,
   .title-row-container,
   .logo-menu-container,
-  .about-row-container,
   .fish-tank-row-container,
-  .template-row-container {,
+  .template-row-container {
+    padding: 0;
+    width: 80%;
+  }
+
+  .about-row-container{
     padding: 0;
     width: 80%;
   }
@@ -20724,11 +20741,15 @@ p a:hover {
   .row-container,
   .title-row-container,
   .logo-menu-container,
-  .about-row-container,
   .fish-tank-row-container,
   .template-row-container {
     padding: 0;
     width: 90%;
+  }
+
+  .about-row-container{
+    padding: 0;
+    width: 80%;
   }
 
   .template-credits-row-container {
@@ -20767,5 +20788,10 @@ p a:hover {
     float: none;
     width: 95%;
     margin-top: 0px;
+  }
+
+  .about-row-container{
+    padding: 0;
+    width: 80%;
   }
 }

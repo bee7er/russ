@@ -19,7 +19,7 @@ class VideoController extends Controller
             $video->rendered = TemplateHelper::render($video);
             $videoTitle = $video->title;
         } else {
-            $error = "Sorry, could not find that video";
+            $error = "Sorry, could not find that media";
             $videoTitle = "None";
         }
 
