@@ -20482,20 +20482,6 @@ body {
   }
 }
 
- /*Otherwise, use `::-webkit-scrollbar-*` pseudo-elements*/
-@supports selector(::-webkit-scrollbar) {
-  .work-text::-webkit-scrollbar {
-    background: #002DFF;
-  }
-  .work-text::-webkit-scrollbar-thumb {
-    background: #a4a4a4;
-  }
-  .work-text::-webkit-scrollbar-button {
-    color: #002DFF;
-    background: #002DFF;
-  }
-}
-
 .about-table {
   font-size: 1.2em;
   background-color: #fff;

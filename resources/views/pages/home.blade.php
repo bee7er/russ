@@ -105,14 +105,14 @@
             // On resize we recalculate the height of the showreel image to maintain aspect ratio
             let t = document.getElementById('{{$titleResource->id}}');
             // We retain the width, because it must line up with the images below, adjust the height
-            // The aspect ratio is 1200 / 582 = 2.062
-            t.height = Math.round(t.width / 2.062);
+            // The aspect ratio is 1200 / 582 = 2.0619
+            t.height = Math.round(t.width / 2.0619);
 
             let f = document.getElementById('{{$secondResource->id}}');
             if (window.innerWidth > 768) {
                 f.height = t.height + 30;
             } else {
-                // It is square
+                // It is square, make it so
                 f.height = f.width;
             }
 
