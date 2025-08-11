@@ -176,8 +176,6 @@ if (!isset($currentPage)) {
             addEvent(window, "resize", handleResizeEvent);
             // Calculate the apsect ratio now, so that it is correct on page load
             calcAspectRatio();
-            // Also ensure that the About text panel is at least as high as the image panel
-            //calcAboutTextPanelHeight();
 
             // Check if we are filtering the output, if so set the underline to indicate which
             const queryString = window.location.search;

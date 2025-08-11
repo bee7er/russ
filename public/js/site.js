@@ -15583,7 +15583,6 @@ if (typeof jQuery === 'undefined') {
 var handleResizeEvent = function (event) {
 
     calcAspectRatio(event);
-    calcAboutTextPanelHeight(event);
 };
 
 /**
@@ -15606,25 +15605,6 @@ var calcAspectRatio = function (event) {
         vidHeight = (Math.round(vidWidth * 0.5625, 0) + adjustment);
         vidFrame.css('height', vidHeight);
     });
-};
-
-/**
- * Check the height of the About panels and ensure they match up correctly
- *
- * @param event
- */
-var calcAboutTextPanelHeight = function (event) {
-    var rowContainer = null;
-    var leftContainer = null;
-    var rightContainer = null;
-    // On resize we recalculate the height of the About text panel to make sure is at least as big as the image one
-    if ((rowContainer = $("#about-row-container"))
-        && (leftContainer = $("#about-left-container"))
-        && (rightContainer = $("#about-right-container"))) {
-        leftContainer.css('min-height', rowContainer.height());
-        // Must adjust the right hand panel to force it to fill the entire outer panel
-        rightContainer.css('min-height', rowContainer.height() + 10);
-    }
 };
 
 /**
