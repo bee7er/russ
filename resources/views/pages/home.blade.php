@@ -68,27 +68,30 @@
     <script type="text/javascript">
         $(document).ready( function()
         {
+            // Ensure the size is set right at the beginning
+            @if($isShowAllResources)
+                window.addEventListener('resize', handleResize);
+
+                handleResize();
+            @endif
         });
 
-        @if($isShowAllResources)
-            /**
-             * For some reason using the bootstrap column classes causes the title image
-             * to acquire an incorrect height.  Here we set the height equal to its next door neighbour.
-             * We must recalculate the height each time the screen is resized.
-             */
-            function handleResize() {
+        /**
+         * For some reason using the bootstrap column classes causes the title image
+         * to acquire an incorrect height.  Here we set the height equal to its next door neighbour.
+         * We must recalculate the height each time the screen is resized.
+         */
+        function handleResize() {
+            @if($isShowAllResources)
                 let f = document.getElementById('{{$secondResource->id}}');
                 let h = f.height;
                 let t = document.getElementById('{{$titleResource->id}}');
 
                 t.height = h + 30;
-    //            console.log('h=' + h);
-    //            console.log('3=' + t.height);
-            }
-            window.addEventListener('resize', handleResize);
-
-            handleResize();
-        @endif
+                //            console.log('h=' + h);
+                //            console.log('3=' + t.height);
+            @endif
+        }
 
     </script>
 @endsection
