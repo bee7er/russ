@@ -20688,7 +20688,7 @@ p a:hover {
 .contact-email a {
   color: #fff;
   border: none;
-  font-size: 1.0em;
+  font-size: 0.7em;
   font-weight: 500 !important;
   display: block;
 }
@@ -20713,13 +20713,6 @@ p a:hover {
 
 /* Media queries */
 
-@media (max-width: 9000px) {
-  .about-row-container{
-    padding: 0;
-    width: 80%;
-  }
-}
-
 @media (max-width: 1200px) {
   .row-container,
   .title-row-container,
@@ -20734,9 +20727,13 @@ p a:hover {
     padding: 0;
     width: 80%;
   }
+
+  .contact-email a {
+    font-size: 0.7em;
+  }
 }
 
-@media (max-width: 860px) {
+@media (max-width: 992px) {
   .row-container,
   .title-row-container,
   .logo-menu-container,
@@ -20770,6 +20767,10 @@ p a:hover {
 
   .tutorial-thumb {
     width: 95%;
+  }
+
+  .contact-email a {
+    font-size: 1.0em;
   }
 }
 
