@@ -66,15 +66,19 @@
 
 @section('page-scripts')
     <script type="text/javascript">
-        $(document).ready( function()
-        {
-            // Ensure the size is set right at the beginning
-            @if($isShowAllResources)
-                window.addEventListener('resize', handleResize);
 
-                handleResize();
-            @endif
-        });
+        function preloadImage(url)
+        {
+            var img=new Image();
+            img.src=url;
+        }
+        @if($isShowAllResources)
+            // Preload the images
+            preloadImage('{!! $secondResource->thumb !!}');
+            preloadImage('{!! $secondResource->thumbHover !!}');
+            preloadImage('{!! $titleResource->titleThumb !!}');
+            preloadImage('{!! $titleResource->titleThumbHover !!}');
+        @endif
 
         /**
          * For some reason using the bootstrap column classes causes the title image
@@ -86,12 +90,22 @@
                 let f = document.getElementById('{{$secondResource->id}}');
                 let h = f.height;
                 let t = document.getElementById('{{$titleResource->id}}');
-
                 t.height = h + 30;
                 //            console.log('h=' + h);
                 //            console.log('3=' + t.height);
             @endif
         }
+
+        $(window).load(function(){
+            // This code runs after document ready.  Unfortunately this has been necessary to
+            // fix an issue with the size of the showreel images
+            @if($isShowAllResources)
+                window.addEventListener('resize', handleResize);
+
+                console.log('In wdw load');
+                handleResize();
+            @endif
+        });
 
     </script>
 @endsection

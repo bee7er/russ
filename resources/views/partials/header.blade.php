@@ -177,7 +177,7 @@ if (!isset($currentPage)) {
             // Calculate the apsect ratio now, so that it is correct on page load
             calcAspectRatio();
             // Also ensure that the About text panel is at least as high as the image panel
-            calcAboutTextPanelHeight();
+            //calcAboutTextPanelHeight();
 
             // Check if we are filtering the output, if so set the underline to indicate which
             const queryString = window.location.search;
@@ -189,7 +189,7 @@ if (!isset($currentPage)) {
 
             // Check which page we are on, if so set the underline to indicate which
             let thisPage = window.location.pathname.replace('/public', "").replace('/', "");
-            console.log(thisPage);
+            //console.log(thisPage);
             if (thisPage =='{{$currentPage}}') {
                 $(document.getElementById(thisPage + 'Id')).addClass('active-filter');
             }
