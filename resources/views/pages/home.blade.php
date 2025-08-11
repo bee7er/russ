@@ -91,10 +91,32 @@
                 let h = f.height;
                 let t = document.getElementById('{{$titleResource->id}}');
                 t.height = h + 30;
-                //            console.log('h=' + h);
-                //            console.log('3=' + t.height);
+
+                calcShowReelAspectRatio();
+
             @endif
+
         }
+
+        /**
+         * Maintain aspect ratio of the showreel panel
+         */
+        function calcShowReelAspectRatio() {
+            // On resize we recalculate the height of the showreel image to maintain aspect ratio
+            let t = document.getElementById('{{$titleResource->id}}');
+            // We retain the width, because it must line up with the images below, adjust the height
+            // The aspect ratio is 1200 / 582 = 2.062
+            t.height = Math.round(t.width / 2.062);
+
+            let f = document.getElementById('{{$secondResource->id}}');
+            if (window.innerWidth > 768) {
+                f.height = t.height + 30;
+            } else {
+                // It is square
+                f.height = f.width;
+            }
+
+        };
 
         $(window).load(function(){
             // This code runs after document ready.  Unfortunately this has been necessary to
@@ -102,9 +124,12 @@
             @if($isShowAllResources)
                 window.addEventListener('resize', handleResize);
 
-                console.log('In wdw load');
                 handleResize();
+
+                calcShowReelAspectRatio();
+
             @endif
+
         });
 
     </script>

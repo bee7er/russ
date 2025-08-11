@@ -20338,7 +20338,7 @@ body {
   margin-bottom: 0;
   padding: 0;
   border: 0;
-  width: 70%;
+  width: 50%;
 }
 
 .row-container,
@@ -20472,7 +20472,28 @@ body {
   text-align: left;
   font-size: 0.75em;
   overflow-y: scroll;
-  scrollbar-color: #a4a4a4 #002DFF;
+}
+
+/* For browsers that support `scrollbar-*` properties */
+@supports (scrollbar-color: auto) {
+  .work-text {
+    scrollbar-color: #a4a4a4 #002DFF;
+    scrollbar-button: #002DFF;
+  }
+}
+
+ /*Otherwise, use `::-webkit-scrollbar-*` pseudo-elements*/
+@supports selector(::-webkit-scrollbar) {
+  .work-text::-webkit-scrollbar {
+    background: #002DFF;
+  }
+  .work-text::-webkit-scrollbar-thumb {
+    background: #a4a4a4;
+  }
+  .work-text::-webkit-scrollbar-button {
+    color: #002DFF;
+    background: #002DFF;
+  }
 }
 
 .about-table {
