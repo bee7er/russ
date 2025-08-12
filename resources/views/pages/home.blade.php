@@ -16,10 +16,10 @@
 
     @if(null !== $titleResource && $isShowAllResources)
         <div class="row title-row-container">
-            <div class="" onclick="document.location='{{url($titleResource->name)}}';">
+            <div id="div_1" onclick="document.location='{{url($titleResource->name)}}';">
                 <img id="{!! $titleResource->id !!}" class="title-work-image col-xs-12 col-sm-8 col-md-8 col-lg-8 col-xl-8" onmouseover="this.src='{!! $titleResource->titleThumbHover !!}'" onmouseout="this.src='{!! $titleResource->titleThumb !!}'" src="{!! $titleResource->titleThumb !!}" title="" alt="{!! $titleResource->name !!}">
             </div>
-            <div {!! $secondResource->clickAction !!} style="">
+            <div id="div_2" {!! $secondResource->clickAction !!}>
                 <img id="{!! $secondResource->id !!}" class="work-image {!! $secondResource->clickActionClass !!}
                         col-xs-12 col-sm-4 col-md-4 col-lg-4 col-xl-4"
                      {!! $secondResource->hoverActions !!}
@@ -33,7 +33,7 @@
             <div class="row">
                 @foreach($resources as $resource)
                     @if($resource->video)
-                        <div {!! $resource->clickAction !!} style="">
+                        <div {!! $resource->clickAction !!}>
                             <video class="work-image {!! $resource->clickActionClass !!} col-xs-12 col-sm-6 col-md-6
                              col-lg-4 col-xl-4"
                                    autoplay
@@ -44,7 +44,7 @@
                             </video>
                         </div>
                     @else
-                        <div {!! $resource->clickAction !!} style="">
+                        <div {!! $resource->clickAction !!}>
                             <img id="{!! $resource->id !!}" class="work-image {!! $resource->clickActionClass !!}
                                     col-xs-12 col-sm-6 col-md-6 col-lg-4 col-xl-4"
                                  {!! $resource->hoverActions !!}
@@ -103,17 +103,20 @@
          */
         function calcShowReelAspectRatio() {
             // On resize we recalculate the height of the showreel image to maintain aspect ratio
-            let t = document.getElementById('{{$titleResource->id}}');
+            let titleElem = document.getElementById('{{$titleResource->id}}');
+            console.log("t height=" + titleElem.height);
             // We retain the width, because it must line up with the images below, adjust the height
-            // The aspect ratio is 1200 / 582 = 2.0619
-            t.height = Math.round(t.width / 2.0619);
+            // The aspect ratio is based on the image dimensions of 1200 / 582 = 2.0619
+            // THe adjustment of 60 is to accommodate the effect of borders (I think)
+            titleElem.height = Math.round((titleElem.width + 60)/ 2.0619);
 
-            let f = document.getElementById('{{$secondResource->id}}');
+            let nextElem = document.getElementById('{{$secondResource->id}}');
             if (window.innerWidth > 768) {
-                f.height = t.height + 30;
+                // Adjustment for borders and gaps
+                nextElem.height = titleElem.height + 30;
             } else {
-                // It is square, make it so
-                f.height = f.width;
+                // Showing images singly.  The image is square, make it so, adjusting for borders
+                nextElem.height = (nextElem.width + 20);
             }
 
         };
@@ -125,9 +128,6 @@
                 window.addEventListener('resize', handleResize);
 
                 handleResize();
-
-                calcShowReelAspectRatio();
-
             @endif
 
         });
