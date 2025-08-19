@@ -102,23 +102,24 @@
          * Maintain aspect ratio of the showreel panel
          */
         function calcShowReelAspectRatio() {
-            // On resize we recalculate the height of the showreel image to maintain aspect ratio
-            let titleElem = document.getElementById('{{$titleResource->id}}');
-            console.log("t height=" + titleElem.height);
-            // We retain the width, because it must line up with the images below, adjust the height
-            // The aspect ratio is based on the image dimensions of 1200 / 582 = 2.0619
-            // THe adjustment of 60 is to accommodate the effect of borders (I think)
-            titleElem.height = Math.round((titleElem.width + 60)/ 2.0619);
+            @if($isShowAllResources)
+                // On resize we recalculate the height of the showreel image to maintain aspect ratio
+                let titleElem = document.getElementById('{{$titleResource->id}}');
+                console.log("t height=" + titleElem.height);
+                // We retain the width, because it must line up with the images below, adjust the height
+                // The aspect ratio is based on the image dimensions of 1200 / 582 = 2.0619
+                // THe adjustment of 60 is to accommodate the effect of borders (I think)
+                titleElem.height = Math.round((titleElem.width + 60)/ 2.0619);
 
-            let nextElem = document.getElementById('{{$secondResource->id}}');
-            if (window.innerWidth > 768) {
-                // Adjustment for borders and gaps
-                nextElem.height = titleElem.height + 30;
-            } else {
-                // Showing images singly.  The image is square, make it so, adjusting for borders
-                nextElem.height = (nextElem.width + 20);
-            }
-
+                let nextElem = document.getElementById('{{$secondResource->id}}');
+                if (window.innerWidth > 768) {
+                    // Adjustment for borders and gaps
+                    nextElem.height = titleElem.height + 30;
+                } else {
+                    // Showing images singly.  The image is square, make it so, adjusting for borders
+                    nextElem.height = (nextElem.width + 20);
+                }
+            @endif
         };
 
         $(window).load(function(){
