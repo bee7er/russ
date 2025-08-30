@@ -20723,6 +20723,10 @@ p a:hover {
   float: left;
 }
 
+.contact-socials {
+  padding-top: 10px;
+}
+
 /* Media queries */
 
 @media (max-width: 1200px) {
